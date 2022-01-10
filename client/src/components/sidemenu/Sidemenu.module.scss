@@ -1,0 +1,36 @@
+/* Stylesheet of Sidemenu.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.sidemenu_container {
+    .content_container {
+        --background: var(--ion-color-primeColor);
+
+        .list_container {
+            background: transparent;
+
+            .btn {
+                padding: 0px 8px 0px 0px;
+                margin: 0;
+                height: 54px;
+                text-transform: none;
+                --background: transparent;
+                --box-shadow: none;
+                --background-hover: rgba(119,204,218);
+                font-size: 16px;
+                --border-radius: 0px 32px 32px 0px;
+
+                .icon {
+                    position: absolute;
+                    left: 32px;
+                    font-size: 28px;
+                }
+
+                .icon_active {
+                    @extend .icon;
+                    animation: rotating_icon $rotating_animation;
+                }
+            }
+        }
+    }
+}

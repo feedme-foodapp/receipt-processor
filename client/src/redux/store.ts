@@ -14,7 +14,8 @@ const store = configureStore({
     }
 });
 
-export { store }
+/* Store */
+export { store };
 
 /* Type(s) */
 export type SplitPaneState = ReturnType<typeof splitPaneReducer>;

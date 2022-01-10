@@ -1,0 +1,21 @@
+/* Stylesheet of ReceiptRecognitionWrapper.tsx */
+
+.grid_container {
+    padding: 12px;
+    height: 100%;
+    background: #f6f8f9;
+
+    .row {
+        height: 100%;
+
+        .col {
+            height: 100%;
+
+            .card {
+                margin: 0;
+                height: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+}
