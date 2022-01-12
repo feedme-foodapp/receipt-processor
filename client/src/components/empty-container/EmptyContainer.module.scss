@@ -1,1 +1,77 @@
 /* Stylesheet of EmptyContainer.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.empty_container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper_container {
+        margin: 0 auto;
+        text-align: center;
+
+        .icon {
+            height: 172px;
+            width: 172px;
+        }
+
+        .flex_container {
+            display: flex;
+            align-items: center;
+
+            .label_container {
+                margin: 0px 4px 0px 0px;
+                font-size: 16px;
+                color: #cbced4;
+            }
+
+            .dot_container {
+                margin: 10px 0px 0px 0px;
+
+                .commonClass {
+                    font-size: 18px;
+                }
+
+                .dot1 {
+                    animation: blinking $dot1
+                }
+
+                .dot2 {
+                    animation: blinking $dot2;
+                }
+
+                .dot3 {
+                    animation: blinking $dot3;
+                }
+            }
+        }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 1024px) {
+    .empty_container {
+        .wrapper_container {
+            .icon {
+                height: 172px;
+                width: 172px;
+            }
+
+            .flex_container {
+                .label_container {
+                    font-size: 18px;
+                }
+
+                .dot_container {
+                    margin: 8px 0px 0px 0px;
+                    
+                    .dot {
+                        font-size: 21px;
+                    }
+                }
+            }
+        }
+    }
+}

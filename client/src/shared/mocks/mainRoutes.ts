@@ -27,7 +27,7 @@ export const MAIN_ROUTES: MainRouteModel[] = [
         id: generateRandomID(),
         name: 'Receipt recognition',
         icon: '/assets/icon/recognition.svg',
-        route: '/recognition/ocr'
+        route: '/receipt-recognition/ocr'
     },
     {
         id: generateRandomID(),

@@ -1,6 +1,11 @@
 /* React */
 import React, { useEffect } from 'react';
 
+/* Ionic */
+import {
+    IonPage
+} from '@ionic/react';
+
 /* React-Redux */
 import {
     useDispatch
@@ -18,7 +23,9 @@ const HomePage: React.FC = () => {
     }, [dispatch]);
 
     return (
-        <div></div>
+        <IonPage>
+            
+        </IonPage>
     );
 };
 

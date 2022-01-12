@@ -22,6 +22,9 @@ import MainRouteModel from 'src/shared/mocks/mainRoutes';
 /* Mock(s) */
 import { MAIN_ROUTES } from 'src/shared/mocks/mainRoutes';
 
+/* Component(s) */
+import Watermark from 'src/components/watermark/Watermark';
+
 /* Stylesheet */
 import styles from './Sidemenu.module.scss';
 
@@ -40,7 +43,7 @@ const Sidemenu: React.FC = () => {
                 return undefined;
             }
         });
-    };  
+    };
 
     useEffect(() => {
         handleActiveRoute();
@@ -51,7 +54,7 @@ const Sidemenu: React.FC = () => {
             <IonButton
                 key={route.id}
                 style={{
-                    '--background': `${(route.route === activeRoute) ? 'rgba(119,204,218,0.5)' : ''}`
+                    '--background': (route.route === activeRoute) ? 'rgba(119,204,218,0.5)' : ''
                 }}
                 className={styles.btn}
                 expand="block"
@@ -76,9 +79,12 @@ const Sidemenu: React.FC = () => {
             <IonContent
                 id="main-content"
                 className={styles.content_container}>
-                <IonList className={styles.list_container}>
-                    {renderRoutes}
-                </IonList>
+                <div className={styles.wrapper_container}>
+                    <IonList className={styles.list_container}>
+                        {renderRoutes}
+                    </IonList>
+                </div>
+                <Watermark />
             </IonContent>
         </IonMenu>
     );

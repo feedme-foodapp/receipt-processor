@@ -1,0 +1,74 @@
+/* Stylesheet of ResultsContainer.tsx */
+
+.results_container {
+    height: 100%;
+
+    .flex_container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .btn_container {
+            width: 90%;
+
+            .label_container {
+                margin: 0px 0px 21px 0px;
+                font-size: 16px;
+                text-align: center;
+                line-height: 1.75;
+            }
+
+            .btn {
+                height: 42px;
+                text-transform: none;
+                --background: var(--ion-color-secColor);
+                --border-radius: 52px;
+
+                .icon {
+                    position: absolute;
+                    left: 21px;
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 1024px) {
+    .results_container {
+        .flex_container {
+            .btn_container {
+                .label_container {
+                    font-size: 18px;
+                }
+
+                .btn {
+                    height: 46px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 1200px) {
+    .results_container {
+        .flex_container {
+            .btn_container {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 1920px) {
+    .results_container {
+        .flex_container {
+            .btn_container {
+                width: 60%;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+/* Stylesheet of Watermark.tsx */
+
+.watermark_container {
+    margin: 0px 0px 0px 42px;
+    opacity: 0.2;
+    height: calc(10% - 8px);
+    display: flex;
+    align-items: center;
+    
+    .logo {
+        height: 52px;
+    }
+
+    .label_container {
+        margin: 12px 0px 0px 4px;
+        color: #ffffff;
+        font-weight: 200;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 1920px) {
+    .watermark_container {
+        .logo {
+            height: 52px;
+        }
+
+        .label_container {
+            font-size: 18px;
+        }
+    }
+}
