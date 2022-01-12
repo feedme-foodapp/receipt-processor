@@ -102,4 +102,5 @@ Grundsätzlich gestaltet sich das Hochladen eines Fotos als eher unproblematisch
 - Beim Hochladen des Fotos wird ein Mechanismus definiert, der Kassenbelege anhand ihrer Struktur (oder Merkmale) erkennt
 - Bei der Extraktion selbst wird erkannt, dass sich keine validen Informationen auf dem hochgeladenen Foto befinden
 
-Bei der zweiten Möglichkeit ist der allgemeine Prozess allerdings schon weit fortgeschritten, wodurch der Benutzer 
+Bei der zweiten Möglichkeit ist der allgemeine Prozess allerdings schon weit fortgeschritten, wodurch der Benutzer erst recht spät im Verfahren darüber informiert wird,
+
