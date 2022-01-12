@@ -96,7 +96,7 @@ const takePicture = async () => {
 
 **<ins>Ausnahmen bestätigen die Regel:</ins>**
 
-Grundsätzlich gestaltet sich das Hochladen eines Fotos eher unproblematisch dar. Für die Dokumenterfassung spielt allerdings ebenso die **Validät des Fotos**, sprich die
+Grundsätzlich gestaltet sich das Hochladen eines Fotos als eher unproblematisch. Für die Dokumenterfassung spielt allerdings ebenso die **Validät des Fotos**, sprich die
 Überprüfung, ob auch tatsächlich ein Kassenbeleg hochgeladen wurde. Hierfür gibt es zumindes zwei verschiedene Möglichkeiten diese Ausnahmen entsprechend abzufangen:
 
 - Beim Hochladen des Fotos wird ein Mechanismus definiert, der Kassenbelege anhand ihrer Struktur (oder Merkmale) erkennt
