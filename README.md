@@ -48,7 +48,10 @@ $ npm install @capacitor/camera
 <ins>Beispiel:</ins>
 
 ```TSX
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { 
+  Camera, 
+  CameraResultType 
+} from '@capacitor/camera';
 
 const takePicture = async () => {
   const image = await Camera.getPhoto({
@@ -61,10 +64,42 @@ const takePicture = async () => {
 
 <br/>
 
-Anschließend wird **image** als **State** im **Redux-Store** gespeichert, um folglich für alle Komponenten innerhalb der Anwendung verfügbar zu sein:
+Anschließend wird **image** als **State** im **Redux-Store** gespeichert, um folglich für alle Komponenten verfügbar zu sein:
+
+```TSX
+import {
+  useDispatch
+} from 'react-redux';
+
+import {
+  setReceipt
+} from 'src/redux/features/receiptSlice';
+
+const takePicture = async () => {
+  try {
+    const image = await Camera.getPhoto({
+      quality: 100,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera
+    });
+    
+    if(image.dataUrl) {
+      dispatch(setReceipt(image));
+    }
+  } catch(error) {
+      console.log(error);
+  }
+};
+```
 
 <br/>
 
-```TSX
-//TODO
-```
+**<ins>Ausnahmen bestätigen die Regel:</ins>**
+
+Grundsätzlich gestaltet sich das Hochladen eines Fotos eher unproblematisch dar. Für die Dokumenterfassung spielt allerdings ebenso die **Validät des Fotos**, sprich die
+Überprüfung, ob auch tatsächlich ein Kassenbeleg hochgeladen wurde. Hierfür gibt es zumindes zwei verschiedene Möglichkeiten diese Ausnahmen entsprechend abzufangen:
+
+- Beim Hochladen des Fotos wird ein Mechanismus definiert, der Kassenbelege anhand ihrer Struktur (oder Merkmale) erkennt
+- Bei der Extraktion selbst wird erkannt, dass sich keine validen Informationen auf dem hochgeladenen Foto befinden
+
+Bei der zweiten Möglichkeit ist der allgemeine Prozess allerdings schon weit fortgeschritten, wodurch der Benutzer 
