@@ -17,6 +17,16 @@ Das Feature lässt sich dabei in die folgenden Prozesse unterteilen:
 
 <br/>
 
+Diese werden in der folgenden Abbildung veranschaulicht:
+
+<br/>
+
+<div align="center">
+  <img src="./documentation/diagrams/feature1_process.svg"/>
+</div>
+
+<br/>
+
 **<ins>Dokumenterfassung:</ins>**
 
 Allgemein soll der Benutzer in der Lage sein, mithilfe der Kamera eines beliebigen Endgerätes, ein Bild von dem gewünschten Kassenbeleg zu machen und hochzuladen,
