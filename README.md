@@ -17,11 +17,10 @@ Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 **<ins>Dokumenterfassung:</ins>**
 
-Allgemein soll der Benutzer in der Lage sein, mithilfe der Kamera eines beliebigen Endgerätes, ein Bild von dem gewünschten Kassenbeleg zu machen und hochzuladen,
-um den Beleg entsprechend anhand der Applikation weiter verarbeiten zu können. Für das Erfassen des Dokuments wird das Plugin **Camera** von **Capacitor** verwendet,
-welches folglich eine Schnittstelle zwischen Hardware und Software bereitstellt:
+Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild vom Kassenbeleg zu machen und für die 
+Weiterverarbeitung hochzuladen. Für das Erfassen des Dokuments wird das Plugin **Camera** von **Capacitor** verwendet:
 
-https://capacitorjs.com/docs/apis/camera
+Link: https://capacitorjs.com/docs/apis/camera
 
 <br/>
 
@@ -33,7 +32,7 @@ $ npm install @capacitor/camera
 
 <br/>
 
-<ins>Beispiel:</ins>
+<ins>Allgemeines Beispiel:</ins>
 
 ```TSX
 import { 
@@ -52,7 +51,7 @@ const takePicture = async () => {
 
 <br/>
 
-Anschließend wird **image** als **State** im **Redux-Store** gespeichert, um folglich für alle Komponenten verfügbar zu sein:
+Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* gespeichert:
 
 ```TSX
 import {
@@ -82,7 +81,9 @@ const takePicture = async () => {
 
 <br/>
 
-**<ins> </ins>
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt:
+
+<ins> </ins>
 
 
 
