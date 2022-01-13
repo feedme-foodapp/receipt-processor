@@ -81,7 +81,32 @@ const takePicture = async () => {
 
 <br/>
 
-Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt:
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher dieser als Property *receipt* übergeben wird. 
+Ist kein Foto vorhanden wird der *EmptyContainer* angezeigt, der als Lückenfüller dienen soll und lediglich ein Beispielbild enthält:
+
+```TSX
+const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
+    return (
+        <div className={styles.preview_container}>
+            {receipt ? (
+                <img 
+                    className={styles.receipt} 
+                    src={receipt} 
+                    alt="receipt" 
+                />
+            ) : (
+                <EmptyContainer
+                    icon={'/assets/icon/image.svg'}
+                    title={'No preview to show yet'}
+                />
+            )}
+        </div>
+    );
+};
+```
+<br/> 
+
+![image](https://user-images.githubusercontent.com/93816646/149337823-886459b0-3779-45c1-9865-643dc6376a80.png)
 
 <ins> </ins>
 
