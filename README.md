@@ -2,24 +2,12 @@
 
 <br/>
 
-Als **Receipt Processor** wird das erste Feature der Applikation **feedMe** bezeichnet, das den grundlegenden Prozess der Extraktion von relevanten Informationen, 
-welche auf dem Kassenbeleg eines Lebensmittelgeschäfts aufgelistet sind, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll
-den Ablauf der Digitalisierung des Kassenbons vereinfachen, um beispielsweise die Aufzeichnung und Verfolgung, sprich das Management der erworbenen Lebensmittel zu 
-erleichtern und der manuellen Eingabe entgegenzuwirken.
+Als **Receipt Processor** wird das Feature 1 der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen,
+die auf dem Kassenbeleg eines Lebensmittelgeschäfts aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll 
+den Ablauf der Aufzeichnung und Verfolgung, sprich das Management von Lebensmitteln vereinfachen und die Digitalisierung des Kassenbelegs ermöglichen, um den Prozess
+der manuellen Eingabe von den bereits erworbenen Produkten entsprechend zu automatisieren.
 
-Das Feature lässt sich dabei in die folgenden Prozesse unterteilen:
-
-- _Dokumenterfassung_
-- _Vorverarbeitung (Pre-processing)_
-- _Texterkennung (Character Recognition)_
-- _Informationsextraktion (Information Extraction)_
-- _Datenweiterverarbeitung_
-
-<br/>
-
-Diese werden in der folgenden Abbildung veranschaulicht:
-
-<br/>
+Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 <div align="center">
   <img src="./documentation/diagrams/feature1_process.svg"/>
@@ -94,13 +82,7 @@ const takePicture = async () => {
 
 <br/>
 
-**<ins>Ausnahmen bestätigen die Regel:</ins>**
+**<ins> </ins>
 
-Grundsätzlich gestaltet sich das Hochladen eines Fotos als eher unproblematisch. Für die Dokumenterfassung spielt allerdings ebenso die **Validät des Fotos**, sprich die
-Überprüfung, ob auch tatsächlich ein Kassenbeleg hochgeladen wurde. Hierfür gibt es mindestens zwei verschiedene Möglichkeiten diese Ausnahmen entsprechend abzufangen:
 
-- Beim Hochladen des Fotos wird ein Mechanismus definiert, der Kassenbelege anhand ihrer Struktur (oder Merkmale) erkennt
-- Bei der Extraktion selbst wird erkannt, dass sich keine validen Informationen auf dem hochgeladenen Foto befinden
-
-Bei der zweiten Möglichkeit ist der allgemeine Prozess allerdings schon weit fortgeschritten, wodurch der Benutzer erst recht spät im Verfahren darüber informiert wird,
 
