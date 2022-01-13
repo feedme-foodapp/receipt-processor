@@ -27,6 +27,12 @@ Das folgende Use-Case Diagramm zeigt, dass der Benutzer neben dem Hochladen, das
 
 <br/>
 
+<div align="center">
+  <img src="./documentation/diagrams/use_case1.svg"/>
+</div>
+
+<br/>
+
 <ins>Installation:</ins>
 
 ```bash
