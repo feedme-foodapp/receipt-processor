@@ -11,21 +11,44 @@ import {
 
 /* React-Redux */
 import { Provider } from 'react-redux';
-import { store } from 'src/redux/store';
+
+import {
+  store,
+  persistor
+} from 'src/redux/store';
+
+import {
+  PersistGate
+} from 'redux-persist/integration/react';
+
+/* Capacitor */
+import { 
+  defineCustomElements 
+} from '@ionic/pwa-elements/loader';
 
 /* Component(s) */
 import App from 'src/App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <Router>
-        <App />
-      </Router>
-    </React.StrictMode>
+    <PersistGate persistor={persistor}>
+      <React.StrictMode>
+        <Router>
+          <App />
+        </Router>
+      </React.StrictMode>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );
+
+/**
+ * some plugins such as camera and toast, have web-based UI available
+ * when not running natively - therefore, the element loader should be called
+ * after the application has been rendered
+**/
+
+defineCustomElements(window);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

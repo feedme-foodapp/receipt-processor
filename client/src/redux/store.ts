@@ -5,17 +5,54 @@ import {
     configureStore
 } from '@reduxjs/toolkit';
 
+import {
+    persistStore,
+    persistReducer,
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER
+} from 'redux-persist';
+
+import storage from 'redux-persist/es/storage';
+
 /* Reducer(s) */
 import splitPaneReducer from 'src/redux/features/splitPaneSlice';
+import receiptReducer from 'src/redux/features/receiptSlice';
+
+const persistConfig = {
+    key: 'receipt',
+    storage
+};
+
+const persistedReducer = persistReducer(persistConfig, receiptReducer);
 
 const store = configureStore({
     reducer: {
-        splitPane: splitPaneReducer
-    }
+        splitPane: splitPaneReducer,
+        receipt: persistedReducer
+    },
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: [
+                FLUSH, 
+                REHYDRATE, 
+                PAUSE, 
+                PERSIST, 
+                PURGE, 
+                REGISTER
+              ]
+        }
+    })
 });
 
+const persistor = persistStore(store);
+
 /* Store */
-export { store };
+export { store, persistor };
 
 /* Type(s) */
-export type SplitPaneState = ReturnType<typeof splitPaneReducer>;
+export type RootState = ReturnType<typeof store.getState>

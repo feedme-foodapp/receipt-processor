@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@capacitor/camera": "^1.2.3",
     "@capacitor/core": "3.3.2",
+    "@ionic/pwa-elements": "^3.1.1",
     "@ionic/react": "^5.5.0",
     "@ionic/react-router": "^5.5.0",
     "@reduxjs/toolkit": "^1.6.2",

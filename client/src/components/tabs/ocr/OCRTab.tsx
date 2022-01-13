@@ -1,6 +1,15 @@
 /* React */
 import React from 'react';
 
+/* React-Redux */
+import {
+    useSelector
+} from 'react-redux';
+
+import {
+    RootState
+} from 'src/redux/store';
+
 /* Util(s) */
 import ReceiptRecognitionWrapper from 'src/utils/wrapper/receipt-recognition/ReceiptRecognitionWrapper';
 
@@ -13,11 +22,15 @@ import FileUploader from 'src/components/file-uploader/FileUploader';
 // import styles from './OCRTab.module.scss';
 
 const OCRTab: React.FC = () => {
+    const receiptState = useSelector((state: RootState) => state.receipt);
+
+    console.log(receiptState.value)
+
     return (
         <React.Fragment>
             <ReceiptRecognitionWrapper>
-                <PreviewContainer image={''} />
-                <ResultsContainer image={''} />
+                <PreviewContainer receipt={receiptState.value} />
+                <ResultsContainer receipt={receiptState.value} />
             </ReceiptRecognitionWrapper>
             <FileUploader />
         </React.Fragment>

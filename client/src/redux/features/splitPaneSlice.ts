@@ -6,14 +6,13 @@ import {
 } from '@reduxjs/toolkit';
 
 /* Interface(s) */
-export interface SplitPaneState {
-    splitPane: SplitPaneState;
+interface SplitPaneState {
     value: boolean;
 }
 
 const initialState: SplitPaneState = {
     value: true
-} as SplitPaneState;
+};
 
 export const splitPaneSlice = createSlice({
     name: 'splitPane',

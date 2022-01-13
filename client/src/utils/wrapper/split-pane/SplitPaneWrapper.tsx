@@ -13,7 +13,7 @@ import {
 
 /* Model(s) */
 import {
-    SplitPaneState
+    RootState
 } from 'src/redux/store';
 
 /* Interface(s) */
@@ -22,7 +22,7 @@ interface SplitPaneWrapperProps {
 }
 
 const SplitPaneWrapper: React.FC<SplitPaneWrapperProps> = ({ children }) => {
-    const splitPaneState: SplitPaneState = useSelector((state: SplitPaneState) => state.splitPane);
+    const splitPaneState = useSelector((state: RootState) => state.splitPane);
 
     return (
         <React.Fragment>
