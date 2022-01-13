@@ -17,10 +17,13 @@ Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 **<ins>Dokumenterfassung:</ins>**
 
-Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild vom Kassenbeleg zu machen und für die 
-Weiterverarbeitung hochzuladen. Für das Erfassen des Dokuments wird das Plugin **Camera** von **Capacitor** verwendet:
+Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild vom Kassenbeleg zu machen und für die
+Weiterverarbeitung in den lokalen Speicher des Browsers (local storage) hochzuladen. Für das Erfassen des Dokuments wird das Plugin **Camera** von **Capacitor**
+verwendet:
 
 Link: https://capacitorjs.com/docs/apis/camera
+
+Das folgende Use-Case Diagramm zeigt, dass der Benutzer neben dem Hochladen, das Foto auch ändern und löschen kann:
 
 <br/>
 
