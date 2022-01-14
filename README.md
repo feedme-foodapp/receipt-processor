@@ -32,16 +32,16 @@ Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalit�
 </div>
 
 <br/>
-<br/>
 
-
-#### <ins>Codebeispiele:</ins>
-
-<ins>Installation:</ins>
+Für die Integration des Plugins muss der folgende Befehl ausgeführt werden:
 
 ```bash
 $ npm install @capacitor/camera
 ```
+
+<br/>
+
+#### <ins>Codebeispiele:</ins>
 
 <br/>
 
@@ -62,7 +62,8 @@ const takePicture = async () => {
 
 <br/>
 
-Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* gespeichert:
+Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* gespeichert. Das Feature *receiptSlice* wird dabei im lokalen Storage des Browsers persistiert, 
+um entsprechend nach einem Refresh, ebenfalls für die Applikation zur Verfügung zu stehen:
 
 ```TSX
 import {
