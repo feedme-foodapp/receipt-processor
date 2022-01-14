@@ -93,19 +93,24 @@ const takePicture = async () => {
 
 <br/>
 
-Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher dieser als Property *receipt* übergeben wird. 
-Ist kein Foto vorhanden wird der *EmptyContainer* angezeigt, der als Lückenfüller dienen soll und lediglich ein Beispielbild enthält:
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher dieser als Property *receipt* übergeben wird.
+Ist kein Foto vorhanden wird der *EmptyContainer* angezeigt, welcher lediglich ein Beispielbild (Illustration) enthält. Wird entsprechend
+ein Foto hinzugefügt, wird ein Fab-Button am unteren rechten Rand des PreviewContainers angezeigt, der die zusätzlichen Funktionalitäten 
+*Pre-Processing* und *Delete Photo* zur Verfügung stellt:
 
 ```TSX
 const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
     return (
         <div className={styles.preview_container}>
             {receipt ? (
-                <img 
-                    className={styles.receipt} 
-                    src={receipt} 
-                    alt="receipt" 
-                />
+                <React.Fragment>
+                    <img 
+                      className={styles.receipt} 
+                      src={receipt} 
+                      alt="receipt" 
+                    />
+                    <ReceiptSettingsFab />
+                </React.Fragment>
             ) : (
                 <EmptyContainer
                     icon={'/assets/icon/image.svg'}
@@ -118,9 +123,13 @@ const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
 ```
 <br/> 
 
-![image](https://user-images.githubusercontent.com/93816646/149337823-886459b0-3779-45c1-9865-643dc6376a80.png)
+![image](https://user-images.githubusercontent.com/93816646/149572482-80c4236d-17f4-49fe-b954-0c050095eb2b.png)
 
 <ins> </ins>
+
+<br/>
+
+### **Texterkennung OCR**
 
 
 
