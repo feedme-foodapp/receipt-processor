@@ -15,7 +15,9 @@ Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 <br/>
 
-**<ins>Dokumenterfassung:</ins>**
+### **Dokumenterfassung**
+
+#### <ins>Allgemeine Funktionalitäten:</ins>
 
 Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild vom Kassenbeleg zu machen und für die
 Weiterverarbeitung in den lokalen Speicher hochzuladen. Das Bild selbst kann dabei geänder oder gelöscht werden. Für das Erfassen des Dokuments wird das Plugin
@@ -30,6 +32,10 @@ Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalit�
 </div>
 
 <br/>
+<br/>
+
+
+#### <ins>Codebeispiele:</ins>
 
 <ins>Installation:</ins>
 
@@ -38,8 +44,6 @@ $ npm install @capacitor/camera
 ```
 
 <br/>
-
-<ins>Allgemeines Beispiel:</ins>
 
 ```TSX
 import { 
