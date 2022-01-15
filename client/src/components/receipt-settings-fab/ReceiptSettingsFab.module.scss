@@ -1,0 +1,44 @@
+/* Stylesheet of ReceiptSettingsFab.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.slide_left {
+    right: 18px;
+    bottom: 16px;
+    animation: slide-left $left;
+}
+
+.slide_right {
+    right: 18px;
+    bottom: 16px;
+    animation: slide-right $right;
+}
+
+.fab_container {
+    right: 18px;
+    bottom: 16px;
+    
+    .open_list_fab {
+        --background: var(--ion-color-secColor);
+    }
+}
+
+.fab_list {
+    margin: 0px 0px 62px 0px;
+
+    .trash_btn {
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        left: 21px;
+        bottom: 52px;
+        --background: var(--ion-color-thirdColor);
+        --color: #ffffff;
+        animation: fade-in $trash;
+
+        .icon {
+            font-size: 24px;
+        }
+    }
+}
+

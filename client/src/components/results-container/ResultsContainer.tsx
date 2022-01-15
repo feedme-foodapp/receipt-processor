@@ -12,6 +12,7 @@ import {
 } from 'ionicons/icons';
 
 /* Component(s) */
+import FileUploader from 'src/components/file-uploader/FileUploader';
 
 /* Stylesheet */
 import styles from './ResultsContainer.module.scss';
@@ -41,6 +42,7 @@ const ResultsContainer: React.FC<ResultsContainerProps> = ({ receipt }) => {
                     </IonButton>
                 </div>
             </div>
+            <FileUploader />
         </div>
     );
 };

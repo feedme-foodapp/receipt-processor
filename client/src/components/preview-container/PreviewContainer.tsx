@@ -1,8 +1,9 @@
 /* React */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 /* Component(s) */
 import EmptyContainer from 'src/components/empty-container/EmptyContainer';
+import ReceiptSettingsFab from 'src/components/receipt-settings-fab/ReceiptSettingsFab';
 
 /* Stylesheet */
 import styles from './PreviewContainer.module.scss';
@@ -13,23 +14,17 @@ interface PreviewContainerProps {
 }
 
 const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
-
-    // const [preview, setPreview] = useState<string>('');
-
-    // useEffect(() => {
-    //     if(receipt) {
-    //         setPreview(receipt)
-    //     }
-    // }, [receipt]);
-
     return (
         <div className={styles.preview_container}>
             {receipt ? (
-                <img 
-                    className={styles.receipt} 
-                    src={receipt} 
-                    alt="receipt" 
-                />
+                <React.Fragment>
+                    <img 
+                        className={styles.receipt} 
+                        src={receipt} 
+                        alt="receipt" 
+                    />
+                    <ReceiptSettingsFab />
+                </React.Fragment>
             ) : (
                 <EmptyContainer
                     icon={'/assets/icon/image.svg'}

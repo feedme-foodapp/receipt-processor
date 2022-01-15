@@ -19,13 +19,19 @@ export const receiptSlice = createSlice({
     initialState,
     reducers: {
         setReceipt: (state, action) => {
-            state.value = action.payload
+            state.value = action.payload;
+        },
+        deleteReceipt: (state) => {
+            state.value = initialState.value;
         }
     }
 });
 
 /* Action(s) */
-export const { setReceipt } = receiptSlice.actions;
+export const { 
+    setReceipt,
+    deleteReceipt
+} = receiptSlice.actions;
 
 /* Reducers(s) */
 export default receiptSlice.reducer;

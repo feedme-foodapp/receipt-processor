@@ -23,3 +23,37 @@ $rotating_animation: 1s ease-in-out infinite alternate;
 $dot1: 1.5s ease-in-out infinite;
 $dot2: 1.5s 0.5s ease-in-out infinite;
 $dot3: 1.5s 0.925s ease-in-out infinite;
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-32px);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translate(-32px);
+    }
+    100% {
+        transform: translate(0px);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+$left: 0.45s ease-in-out forwards;
+$right: 0.45s ease-in-out forwards;
+$trash: 0.25s ease-in-out forwards;
