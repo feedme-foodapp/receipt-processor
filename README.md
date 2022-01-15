@@ -131,5 +131,13 @@ const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
 
 ### **Texterkennung OCR**
 
+<br/>
+
+<div align="center">
+  <img src="./documentation/diagrams/use_case3.svg"/>
+</div>
+
+<br/>
+
 
 
