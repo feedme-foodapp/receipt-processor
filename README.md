@@ -129,9 +129,14 @@ const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
 
 <br/>
 
-### **Texterkennung OCR**
+### **Texterkennung (Optical Character Recognition)**
 
 <br/>
+
+Unter *Optical Character Recognition (OCR)*
+
+
+Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalitäten:
 
 <div align="center">
   <img src="./documentation/diagrams/use_case3.svg"/>
