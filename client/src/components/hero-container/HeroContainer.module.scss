@@ -1,0 +1,32 @@
+/* Stylesheet of HeroContainer.tsx */
+
+@import 'src/theme/shadow.scss';
+
+.hero_container {
+    height: calc(100% / 3);
+
+    /* background-image */
+    background: url('/assets/img/hero-image.svg');
+    background-size: cover;
+    background-position: center;
+
+    /* box-shadow */
+    box-shadow: $box-shadow;
+    -webkit-box-shadow: $webkit-box-shadow;
+    -moz-box-shadow: $moz-box-shadow;
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(max-height: 512px) {
+    @media screen and(orientation: landscape) {
+        .hero_container {
+            height: calc(100% / 2);
+        }
+    }
+}
+
+@media screen and(min-width: 1024px) {
+    .hero_container {
+        height: calc(100% / 2);
+    }
+}

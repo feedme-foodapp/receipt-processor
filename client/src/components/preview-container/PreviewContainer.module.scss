@@ -1,5 +1,7 @@
 /* Stylesheet of PreviewContainer.tsx */
 
+@import 'src/theme/shadow.scss';
+
 .preview_container {
     display: flex;
     height: 100%;
@@ -10,5 +12,10 @@
         margin: 0;
         height: 90%;
         border-radius: 8px;
+
+        /* box-shadow */
+        box-shadow: $box-shadow;
+        -webkit-box-shadow: $webkit-box-shadow;
+        -moz-box-shadow: $moz-box-shadow;
     }
 }

@@ -21,6 +21,7 @@ import storage from 'redux-persist/es/storage';
 /* Reducer(s) */
 import splitPaneReducer from 'src/redux/features/splitPaneSlice';
 import receiptReducer from 'src/redux/features/receiptSlice';
+import toastReducer from 'src/redux/features/toastSlice';
 
 const persistConfig = {
     key: 'receipt',
@@ -32,7 +33,8 @@ const persistedReducer = persistReducer(persistConfig, receiptReducer);
 const store = configureStore({
     reducer: {
         splitPane: splitPaneReducer,
-        receipt: persistedReducer
+        receipt: persistedReducer,
+        toast: toastReducer
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -52,7 +54,10 @@ const store = configureStore({
 const persistor = persistStore(store);
 
 /* Store */
-export { store, persistor };
+export { 
+    store, 
+    persistor 
+};
 
 /* Type(s) */
 export type RootState = ReturnType<typeof store.getState>

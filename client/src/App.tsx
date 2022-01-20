@@ -1,9 +1,8 @@
 /* React */
 import React from 'react';
-
 /* Ionic */
-import { 
-  IonApp 
+import {
+  IonApp
 } from '@ionic/react';
 
 /* Core CSS required for Ionic components to work properly */
@@ -28,10 +27,17 @@ import './theme/variables.css';
 /* Util(s) */
 import MainRouter from 'src/utils/router/main-router/MainRouter';
 
-const App: React.FC = () => (
-  <IonApp>  
-    <MainRouter />
-  </IonApp>
-);
+/* Component(s) */
+import ToastContainer from 'src/components/toast-container/ToastContainer';
+
+const App: React.FC = () => {
+
+  return (
+    <IonApp>
+      <MainRouter />
+      <ToastContainer />
+    </IonApp>
+  )
+};
 
 export default App;

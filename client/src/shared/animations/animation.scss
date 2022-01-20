@@ -57,3 +57,16 @@ $dot3: 1.5s 0.925s ease-in-out infinite;
 $left: 0.45s ease-in-out forwards;
 $right: 0.45s ease-in-out forwards;
 $trash: 0.25s ease-in-out forwards;
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(162px);
+        display: none;
+    }
+    100% {
+        transform: translateY(0);
+        display: block;
+    }
+}
+
+$toast: 0.5s ease-out;

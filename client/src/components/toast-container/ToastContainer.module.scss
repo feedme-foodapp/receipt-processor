@@ -1,0 +1,58 @@
+/* Stylesheet of ToastContainer.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.toast_container {
+    position: absolute;
+    bottom: 0;
+    height: 62px;
+    width: 100%;
+    
+    .toast {
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        // border-radius: 52px;
+        animation: slide-up $toast;
+        opacity: 0.9;
+
+        /* box-shadow */
+        box-shadow: 2px 2px 3px 0px rgba(32,32,32,0.66);
+        -webkit-box-shadow: 2px 2px 3px 0px rgba(32,32,32,0.66);
+        -moz-box-shadow: 2px 2px 3px 0px rgba(32,32,32,0.66);
+
+        .grid_container {
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            ion-row {
+                width: 100%;
+
+                .col {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    .icon {
+                        color: #ffffff;
+                        font-size: 26px;
+                    }
+
+                    .message {
+                        margin: 0 auto;
+                        color: #ffffff;
+                    }
+
+                    .btn {
+                        height: 62px;
+                        width: 62px;
+                        --background: transparent;
+                        --box-shadow: none;
+                        --border-radius: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

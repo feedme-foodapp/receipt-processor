@@ -10,6 +10,11 @@ import {
     deleteReceipt
 } from 'src/redux/features/receiptSlice';
 
+import  {
+    handleShow,
+    setToastContent
+} from 'src/redux/features/toastSlice';
+
 /* Ionic */
 import {
     IonFab,
@@ -20,7 +25,8 @@ import {
 
 import {
     settingsOutline,
-    trashBinOutline
+    trashBinOutline,
+    informationCircleOutline
 } from 'ionicons/icons';
 
 /* Stylesheet */
@@ -63,6 +69,12 @@ const ReceiptSettingsFab: React.FC = () => {
                     onClick={
                         () => {
                             dispatch(deleteReceipt());
+                            dispatch(setToastContent({
+                                icon: informationCircleOutline,
+                                message: 'Receipt cleared successfully',
+                                color: '#77da85'
+                            }));
+                            dispatch(handleShow(true));
                         }
                     }>
                     <IonIcon icon={trashBinOutline} />
