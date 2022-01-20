@@ -7,6 +7,9 @@ die auf dem Kassenbeleg eines Lebensmittelgeschäfts aufgelistet werden, mithilf
 den Ablauf der Aufzeichnung und Verfolgung, sprich das Management von Lebensmitteln vereinfachen und die Digitalisierung des Kassenbelegs ermöglichen, um den Prozess
 der manuellen Eingabe von den bereits erworbenen Produkten entsprechend zu automatisieren.
 
+#### <ins>Allgemeine Projektstruktur:</ins>
+
+
 Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 <div align="center">
@@ -145,4 +148,19 @@ Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalit�
 <br/>
 
 
+#### Tesseract.js
 
+*Tesseract.js* ist eine frei verfügbare (Open-Source) JavaScript-Bibliothek, welche die original in C geschriebene Bibliothek *Tesseract* kompiliert und mithilfe von
+*WebAssembly* für den Browser ausführbare macht. Die Texterkennung erfolgt dabei anhand eines *neuronalen Netzwerks*, das wiederum auf dem Prinzip
+*LSTM (Long Short-Term Memory)* basiert, um entsprechend möglichst akkurate Ergebnisse beim Erkennungsprozess zu erzielen.
+
+Für die Integration von Tesseract muss der folgende Befehl ausgeführt werden. Die Applikation selbst ist dabei ausschließlich in *TypeScript*
+(Superset von JavaScript) geschrieben, wodurch für alle Bibliotheken entsprechend die dazugehörigen Datentypen (Types) installiert werden:
+
+```bash
+$ npm install tesseract.ts
+```
+
+```JSX
+
+```
