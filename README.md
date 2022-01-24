@@ -7,8 +7,21 @@ die auf dem Kassenbeleg eines Lebensmittelgeschäfts aufgelistet werden, mithilf
 den Ablauf der Aufzeichnung und Verfolgung, sprich das Management von Lebensmitteln vereinfachen und die Digitalisierung des Kassenbelegs ermöglichen, um den Prozess
 der manuellen Eingabe von den bereits erworbenen Produkten entsprechend zu automatisieren.
 
-#### <ins>Allgemeine Projektstruktur:</ins>
+#### <ins>Allgemeine Projektstruktur & Architektur:</ins>
 
+Das Projekt lässt sich in verschiedene Ordner unterteilen. Der Ordner *receipt-processor* beinhaltet den gesamten Sourcecode, sowie die Dokumentation und Diagramme,
+die zur Veranschaulichung der einzelnen Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React* geschrieben ist. Um entsprechend robuste User Interfaces bereitzustellen, welchem einem nativen Look & Feel sehr nahe kommen und sich individuell gestalten lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus hauptsächlich auf die Entwicklung einer progressiven Webapplikation gelegt,
+die sich unabhängig von der Plattform ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
+
+<br/>
+
+<div align="center">
+  <img src="./documentation/diagrams/stack.svg"/>
+</div>
+
+//TODO:
+
+<br/>
 
 Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
