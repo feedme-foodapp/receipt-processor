@@ -199,9 +199,7 @@ const ResultsContainer: React.FC = ({ receipt } ) => {
       } else {
           return (
               <React.Fragment>
-                  <div className={styles.label_container}>
-                      <div style={{ color: !receipt ? '#cbced4' : '#30394a' }}>Push <span style={{ color: !receipt ? '' : 'var(--ion-color-secColor)' }}>Analyze</span> to start Optical Character Recognition</div>
-                  </div>
+                  {/* label container */}
                   <IonButton
                       className={styles.btn}
                       expand="block"
