@@ -225,7 +225,22 @@ const ResultsContainer: React.FC = ({ receipt } ) => {
   };
   
   return (
-    
+     <div className={styles.results_container}>
+        <div className={styles.flex_container}>
+            <div className={styles.btn_container}>
+                {!isProcessing ? (
+                    renderResults()
+                ) : (
+                    <Illustrator
+                        icon={'/assets/icon/glass.svg'}
+                        title={'Is processing'}
+                        animation={true}
+                    />
+                )}
+            </div>
+         </div>
+         <FileUploader />
+     </div>
   );
 };
 ```
