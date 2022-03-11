@@ -182,7 +182,7 @@ $ npm install tesseract.ts
 
 Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Komponente ermöglicht es, dem Benutzer nach dem Upload des Kassenbelegs auf *Analyisieren* zu klicken. Ist die Analyse abgeschlossen, werden die Ergebnisse entsprechend angezeigt. Neben dem farbigen Hervorheben mit Bounding-Boxen, soll zusätzlich beim Hovern über das entsprechende Wort, die Genauigkeit (Accuracy) dargestellt werden.
 
-Der Komponente selbst wird der Kassenbeleg als Property übergeben:
+Der Komponente selbst wird der Kassenbeleg als Property übergeben. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Füll-Komponenten und andererseits zum Speichern der eigentlichen Ergebnisse nach der Texterkennung:
 
 ```JSX
 const ResultsContainer: React.FC = ({ receipt } ) => {
