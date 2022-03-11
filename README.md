@@ -111,7 +111,7 @@ const takePicture = async () => {
 
 Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher dieser als Property *receipt* übergeben wird.
 Ist kein Foto vorhanden wird der *EmptyContainer* angezeigt, welcher lediglich ein Beispielbild (Illustration) enthält. Wird entsprechend
-ein Foto hinzugefügt, wird ein Fab-Button am unteren rechten Rand des PreviewContainers angezeigt, der die zusätzlichen Funktionalitäten 
+ein Foto hinzugefügt, wird ein Fab-Button am unteren rechten Rand des PreviewContainers angezeigt, der die zusätzlichen Funktionalitäten:
 *Pre-Processing* und *Delete Photo* zur Verfügung stellt:
 
 ```TSX
@@ -177,3 +177,58 @@ $ npm install tesseract.ts
 ```JSX
 
 ```
+
+<br/>
+
+Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Komponente ermöglicht es, dem Benutzer nach dem Upload des Kassenbelegs auf *Analyisieren* zu klicken. Ist die Analyse abgeschlossen, werden die Ergebnisse entsprechend angezeigt. Neben dem farbigen Hervorheben mit Bounding-Boxen, soll zusätzlich beim Hovern über das entsprechende Wort, die Genauigkeit (Accuracy) dargestellt werden.
+
+Der Komponente selbst wird der Kassenbeleg als Property übergeben:
+
+```JSX
+const ResultsContainer: React.FC = ({ receipt } ) => {
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const [results, setResults] = useState();
+    
+  const renderResults = () => {
+      if (results) {
+          return (
+              <div>
+                {/* display results */}
+              </div>
+          );
+      } else {
+          return (
+              <React.Fragment>
+                  <div className={styles.label_container}>
+                      <div style={{ color: !receipt ? '#cbced4' : '#30394a' }}>Push <span style={{ color: !receipt ? '' : 'var(--ion-color-secColor)' }}>Analyze</span> to start Optical Character Recognition</div>
+                  </div>
+                  <IonButton
+                      className={styles.btn}
+                      expand="block"
+                      disabled={!receipt ? true : false}
+                      onClick={
+                          () => {
+                              setIsProcessing(true);
+                              ServiceLoader.tesseract().recognize(receipt).then((results: any) => {
+                                  setResults(results);
+                                  setIsProcessing(false);
+                              });
+                          }
+                      }>
+                      <IonIcon
+                          className={styles.icon}
+                          icon={analyticsOutline}
+                      />
+                      Analyze
+                  </IonButton>
+              </React.Fragment>
+          );
+      }
+  };
+  
+  return (
+    
+  );
+};
+```
+
