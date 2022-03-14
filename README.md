@@ -182,7 +182,7 @@ $ npm install tesseract.ts
 
 Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Komponente ermöglicht es, dem Benutzer nach dem Upload des Kassenbelegs auf *Analyisieren* zu klicken. Ist die Analyse abgeschlossen, werden die Ergebnisse entsprechend angezeigt. Neben dem farbigen Hervorheben mit Bounding-Boxen, soll zusätzlich beim Hovern über das entsprechende Wort, die Genauigkeit (Accuracy) dargestellt werden.
 
-Der Komponente selbst wird der Kassenbeleg als Property übergeben. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Füll-Komponenten und andererseits zum Speichern der eigentlichen Ergebnisse nach der Texterkennung:
+Der Komponente selbst wird der Kassenbeleg als Property übergene. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Komponenten, die den Ablauf der Applikation veranschaulichen und andererseits zum Anzeigen der Ergebnisse nach der Texterkennung. Die Ergebnisse werden dabei im Local Storage des Browsers zwischengespeichert, um entsprechend nach dem Refresh der Seite weiterhin angezeigt werden zu können, bzw. für die weitere Verarbeitung bestehen zu bleiben:
 
 ```JSX
 const ResultsContainer: React.FC = ({ receipt } ) => {
@@ -208,6 +208,7 @@ const ResultsContainer: React.FC = ({ receipt } ) => {
                           () => {
                               setIsProcessing(true);
                               ServiceLoader.tesseract().recognize(receipt).then((results: any) => {
+                                  localStorage.setItem('results', CircularJSON.stringify(results));
                                   setResults(results);
                                   setIsProcessing(false);
                               });
@@ -245,5 +246,12 @@ const ResultsContainer: React.FC = ({ receipt } ) => {
 };
 ```
 <br/>
+
+
+#### Result-Objekt
+
+Dast *Result-Objekt* von Tesseract ist wie folgt aufgebaut:
+
+![image](https://user-images.githubusercontent.com/93816646/158157569-26f11a6a-293f-4b7c-b131-2558cd016248.png)
 
 
