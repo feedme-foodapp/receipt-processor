@@ -250,8 +250,8 @@ const ResultsContainer: React.FC = ({ receipt } ) => {
 
 #### Result-Objekt
 
-Die folgende Abbildung zeigt das Objekt mit den entsprechenden Attributen, das nach dem erfolgreichen Erkennungsprozess zurückgegeben wird:
+Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attributen, das nach dem erfolgreichen Erkennungsprozess von Tesseract zurückgegeben wird:
 
-![image](https://user-images.githubusercontent.com/93816646/158157569-26f11a6a-293f-4b7c-b131-2558cd016248.png)
+![image](https://user-images.githubusercontent.com/93816646/158157569-26f11a6a-293f-4b7c-b131-2558cd016248.png){width: 420xpx;}
 
 
