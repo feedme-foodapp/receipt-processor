@@ -2,13 +2,13 @@
 
 <br/>
 
-Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäfts aufgelistet sind, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits, die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
-
+Als **Receipt Processor** wird das erste Feature der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäft aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits,
+die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
 
 #### <ins>Allgemeine Projektstruktur & Architektur:</ins>
 
 Das Projekt lässt sich in verschiedene Ordner unterteilen. Der Ordner *receipt-processor* beinhaltet den gesamten Sourcecode, sowie die Dokumentation und Diagramme,
-die zur Veranschaulichung der einzelnen Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React* geschrieben ist. Um entsprechend robuste User Interfaces bereitzustellen, welchem einem nativen Look & Feel sehr nahe kommen und sich individuell gestalten lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus hauptsächlich auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
+die zur Veranschaulichung der einzelnen Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React* (JavaScript-basiertes Framework) geschrieben ist. Um entsprechend robuste User Interfaces bereitzustellen, die einem nativen Aussehen und Verhalten sehr nahe kommen, sowie sich individuell gestalten lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus entsprechend auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform des jeweiligen Endgeräts ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
 
 Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur* aufgebaut.
 
