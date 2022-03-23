@@ -34,7 +34,9 @@ Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
 #### <ins>Allgemeine Funktionalitäten:</ins>
 
-Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung im lokalen Speicher des Browser zu persistieren. Das Bild kann dabei jederzeit geänder oder gelöscht werden. Für das Erfassen des Dokuments wird das Plugin *Camera* von *Capacitor* verwendet: https://capacitorjs.com/docs/apis/camera
+Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung im lokalen Speicher des Browser zu persistieren. Das Bild kann dabei jederzeit geänder oder gelöscht werden. Für das Erfassen des Dokuments wird das Plugin *Camera* von *Capacitor* verwendet: 
+
+https://capacitorjs.com/docs/apis/camera
 
 
 
