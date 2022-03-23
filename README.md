@@ -75,8 +75,7 @@ const takePicture = async () => {
 
 <br/>
 
-Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* gespeichert. Das Feature *receiptSlice* wird dabei im lokalen Storage des Browsers persistiert, 
-um entsprechend nach einem Refresh, ebenfalls für die Applikation zur Verfügung zu stehen:
+Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* als Base64 gespeichert. Das Redux-Feature *receiptSlice* wird im lokalen Storage des Browsers persistiert, um entsprechend nach dem Refresh weiterhin zur Verfügung zu stehen:
 
 ```TSX
 import {
@@ -106,35 +105,10 @@ const takePicture = async () => {
 
 <br/>
 
-Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher dieser als Property *receipt* übergeben wird.
-Ist kein Foto vorhanden wird der *EmptyContainer* angezeigt, welcher lediglich ein Beispielbild (Illustration) enthält. Wird entsprechend
-ein Foto hinzugefügt, wird ein Fab-Button am unteren rechten Rand des PreviewContainers angezeigt, der die zusätzlichen Funktionalitäten:
-*Pre-Processing* und *Delete Photo* zur Verfügung stellt:
-
-```TSX
-const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
-    return (
-        <div className={styles.preview_container}>
-            {receipt ? (
-                <React.Fragment>
-                    <img 
-                      className={styles.receipt} 
-                      src={receipt} 
-                      alt="receipt" 
-                    />
-                    <ReceiptSettingsFab />
-                </React.Fragment>
-            ) : (
-                <EmptyContainer
-                    icon={'/assets/icon/image.svg'}
-                    title={'No preview to show yet'}
-                />
-            )}
-        </div>
-    );
-};
-```
-<br/> 
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher die Property *receipt* übergeben wird.
+Ist kein Kassenbeleg vorhanden wird der *EmptyContainer* dargestellt, der lediglich dem Benutzer eine Beispiel-Illustration anzeigt.
+Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete Photo* der Komponente *ReceiptSettingsFab* zur Verfügung,
+welche als Fab-Button mit verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der Komponente dargestellt wird.
 
 ![image](https://user-images.githubusercontent.com/93816646/149572482-80c4236d-17f4-49fe-b954-0c050095eb2b.png)
 
