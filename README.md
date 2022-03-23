@@ -38,10 +38,7 @@ Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgerät
 
 https://capacitorjs.com/docs/apis/camera
 
-
-
-
-Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalitäten:
+Das folgende Use-Case Diagramm soll die zuvor genannten Funktionalitäten veranschaulichen:
 
 <br/>
 
