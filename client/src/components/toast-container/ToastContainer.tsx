@@ -1,5 +1,5 @@
 /* React */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 /* React-Redux */
 import {
@@ -35,6 +35,12 @@ import styles from './ToastContainer.module.scss';
 const ToastContainer: React.FC = () => {
     const dispatch = useDispatch();
     const toastState = useSelector((state: RootState) => state.toast);
+
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(handleShow(false));
+        }, 5000);
+    });
 
     const renderToastContainer = () => {
         if (toastState.show) {

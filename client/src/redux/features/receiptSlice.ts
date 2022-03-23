@@ -7,22 +7,22 @@ import {
 
 /* Interface(s) */
 interface ReceiptState {
-    value: string;
+    receipt: string;
 } 
 
 const initialState: ReceiptState = {
-    value: ''
+    receipt: ''
 }
 
 export const receiptSlice = createSlice({
-    name: 'receipt',
+    name: 'receiptSlice',
     initialState,
     reducers: {
         setReceipt: (state, action) => {
-            state.value = action.payload;
+            state.receipt = action.payload;
         },
         deleteReceipt: (state) => {
-            state.value = initialState.value;
+            state.receipt = initialState.receipt;
         }
     }
 });
@@ -33,5 +33,5 @@ export const {
     deleteReceipt
 } = receiptSlice.actions;
 
-/* Reducers(s) */
+/* Reducer */
 export default receiptSlice.reducer;

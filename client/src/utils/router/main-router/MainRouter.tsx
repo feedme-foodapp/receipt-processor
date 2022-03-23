@@ -9,8 +9,8 @@ import {
 } from 'react-router';
 
 /* Ionic */
-import { 
-    IonRouterOutlet 
+import {
+    IonRouterOutlet
 } from '@ionic/react';
 
 /* Util(s) */

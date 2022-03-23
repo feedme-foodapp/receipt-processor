@@ -1,8 +1,8 @@
-/* Stylesheet of EmptyContainer.tsx */
+/* Stylesheet of Illustrator.tsx */
 
 @import 'src/shared/animations/animation.scss';
 
-.empty_container {
+.placeholder_container {
     display: flex;
     height: 100%;
     align-items: center;
@@ -13,8 +13,13 @@
         text-align: center;
 
         .icon {
-            height: 172px;
-            width: 172px;
+            height: 162px;
+            width: 162px;
+            color: #d2d7e2;
+        }
+
+        .icon_shaking {
+            animation: $glass;
         }
 
         .flex_container {
@@ -22,13 +27,13 @@
             align-items: center;
 
             .label_container {
-                margin: 0px 4px 0px 0px;
-                font-size: 16px;
-                color: #cbced4;
+                margin: 12px 6px 0px 0px;
+                font-size: 18px;
+                color: #d2d7e2;
             }
 
             .dot_container {
-                margin: 10px 0px 0px 0px;
+                margin: 21px 0px 0px 0px;
 
                 .commonClass {
                     font-size: 18px;
@@ -52,9 +57,10 @@
 
 /* set Media Queries for different display sizes and orientation of devices */
 @media screen and(min-width: 1024px) {
-    .empty_container {
+    .placeholder_container {
         .wrapper_container {
             .icon {
+                margin: 0px 0px 12px 0px;
                 height: 172px;
                 width: 172px;
             }
@@ -65,10 +71,10 @@
                 }
 
                 .dot_container {
-                    margin: 8px 0px 0px 0px;
+                    margin: 18px 0px 0px 0px;
                     
                     .dot {
-                        font-size: 21px;
+                        font-size: 18px;
                     }
                 }
             }

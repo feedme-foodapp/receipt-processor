@@ -1,0 +1,23 @@
+/* Stylesheet of OCRProcessing.tsx */
+
+.ocr_processing_container {
+    .label_container {
+        margin: 0px 0px 21px 0px;
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.75;
+    }
+
+    .btn {
+        height: 42px;
+        text-transform: none;
+        --background: var(--ion-color-secColor);
+        --border-radius: 52px;
+
+        .icon {
+            position: absolute;
+            left: 21px;
+            font-size: 28px;
+        }
+    }
+}

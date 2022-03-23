@@ -1,1 +1,45 @@
 /* Stylesheet of NavCard.tsx */
+
+@import 'src/theme/shadow.scss';
+
+.col {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    .card {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 21px;
+        cursor: pointer;
+        
+        .title_container {
+            display: flex;
+            height: 92px;
+            align-items: center;
+            justify-content: center;
+        
+            /* box-shadow */
+            box-shadow: $box-shadow;
+            -webkit-box-shadow: $webkit-box-shadow;
+            -moz-box-shadow: $moz-box-shadow;
+        
+            .title {
+                color: #ffffff;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 512px) {
+    .col {
+        padding: 0px 16px 0px 16px;
+
+        .card {
+            height: 90%;
+        }
+    }
+}

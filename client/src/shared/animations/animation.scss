@@ -10,6 +10,7 @@
 }
 
 $rotating_animation: 1s ease-in-out infinite alternate;
+$rotating_animation_slow: 2s ease-in-out infinite alternate;
 
 @keyframes blinking {
     0% {
@@ -58,6 +59,8 @@ $left: 0.45s ease-in-out forwards;
 $right: 0.45s ease-in-out forwards;
 $trash: 0.25s ease-in-out forwards;
 
+$OCRDynamicLabel: 0.25s ease-out;
+
 @keyframes slide-up {
     0% {
         transform: translateY(162px);
@@ -70,3 +73,26 @@ $trash: 0.25s ease-in-out forwards;
 }
 
 $toast: 0.5s ease-out;
+
+@keyframes shaking {
+    0% {
+        transform: rotate(-12deg);
+    }
+    100% {
+        transform: rotate(12deg);
+    }
+}
+
+$glass: shaking 1s ease-in-out infinite alternate;
+
+@keyframes turn_around {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+$turn_around: 2s ease-in-out infinite alternate;
+

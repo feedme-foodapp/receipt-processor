@@ -2,8 +2,9 @@
 import React from 'react';
 
 /* Component(s) */
-import EmptyContainer from 'src/components/empty-container/EmptyContainer';
+import Illustrator from 'src/components/illustrator/Illustrator';
 import ReceiptSettingsFab from 'src/components/receipt-settings-fab/ReceiptSettingsFab';
+import LandscapeFiller from 'src/components/landscape-filler/LandscapeFiller';
 
 /* Stylesheet */
 import styles from './PreviewContainer.module.scss';
@@ -15,23 +16,27 @@ interface PreviewContainerProps {
 
 const PreviewContainer: React.FC<PreviewContainerProps> = ({ receipt }) => {
     return (
-        <div className={styles.preview_container}>
-            {receipt ? (
-                <React.Fragment>
-                    <img 
-                        className={styles.receipt} 
-                        src={receipt} 
-                        alt="receipt" 
+        <React.Fragment>
+            <div className={styles.preview_container}>
+                {receipt ? (
+                    <React.Fragment>
+                        <img
+                            className={styles.receipt}
+                            src={receipt}
+                            alt="receipt"
+                        />
+                        <ReceiptSettingsFab />
+                    </React.Fragment>
+                ) : (
+                    <Illustrator
+                        icon={'/assets/icon/image2.svg'}
+                        title={'No preview to show yet'}
+                        animation={false}
                     />
-                    <ReceiptSettingsFab />
-                </React.Fragment>
-            ) : (
-                <EmptyContainer
-                    icon={'/assets/icon/image.svg'}
-                    title={'No preview to show yet'}
-                />
-            )}
-        </div>
+                )}
+            </div>
+            <LandscapeFiller />
+        </React.Fragment>
     );
 };
 

@@ -2,11 +2,12 @@
 
 import {
     Tesseract
-} from 'tesseract.ts'
+} from 'tesseract.ts';
 
 export class TesseractService {
     
-    public recognize(receipt: string) {
-        Tesseract.recognize(receipt);
+    public async recognize(receipt: string) {
+        const results = await Tesseract.recognize(receipt, 'deu');
+        return results;
     }
 }

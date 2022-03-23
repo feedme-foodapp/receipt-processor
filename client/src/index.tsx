@@ -29,6 +29,9 @@ import {
 /* Component(s) */
 import App from 'src/App';
 
+/* Stylesheet */
+import './index.scss';
+
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>

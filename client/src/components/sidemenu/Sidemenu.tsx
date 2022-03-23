@@ -29,8 +29,8 @@ import Watermark from 'src/components/watermark/Watermark';
 import styles from './Sidemenu.module.scss';
 
 const Sidemenu: React.FC = () => {
-    const routes: MainRouteModel[] = MAIN_ROUTES;
     const location = useLocation();
+    const routes: MainRouteModel[] = MAIN_ROUTES;
 
     // activeRoute
     const [activeRoute, setActiveRoute] = useState<string>(routes[1].route);
@@ -74,10 +74,8 @@ const Sidemenu: React.FC = () => {
     return (
         <IonMenu
             className={styles.sidemenu_container}
-            menuId="main-menu"
-            contentId="main-content">
+            contentId="main-menu">
             <IonContent
-                id="main-content"
                 className={styles.content_container}>
                 <div className={styles.wrapper_container}>
                     <IonList className={styles.list_container}>

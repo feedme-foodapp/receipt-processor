@@ -1,5 +1,14 @@
 /* React */
 import React from 'react';
+
+import { 
+  initDB 
+} from 'react-indexed-db';
+
+import {
+  DBConfig
+} from 'src/config/DBConfig';
+
 /* Ionic */
 import {
   IonApp
@@ -30,8 +39,9 @@ import MainRouter from 'src/utils/router/main-router/MainRouter';
 /* Component(s) */
 import ToastContainer from 'src/components/toast-container/ToastContainer';
 
-const App: React.FC = () => {
+initDB(DBConfig);
 
+const App: React.FC = () => {
   return (
     <IonApp>
       <MainRouter />

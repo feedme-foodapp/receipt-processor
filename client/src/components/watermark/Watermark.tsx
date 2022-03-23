@@ -10,7 +10,7 @@ const Watermark: React.FC = () => {
             <img 
                 className={styles.logo} 
                 src={'/assets/img/logo.svg'} 
-                alt="logo.svg" 
+                alt="Logo" 
             />
             <div className={styles.label_container}>
                 a <span>feedMe</span> product

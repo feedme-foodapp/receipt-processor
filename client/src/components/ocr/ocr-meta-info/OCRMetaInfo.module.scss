@@ -1,0 +1,14 @@
+/* Stylesheet of OCRMetaInfo.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.meta_info_container {
+    padding: 21px 0px 0px 12px;
+    user-select: none;
+    font-size: 16px;
+    animation: fade-in $OCRDynamicLabel;
+
+    .info {
+        margin: 21px 0px 21px 12px;
+    }
+}

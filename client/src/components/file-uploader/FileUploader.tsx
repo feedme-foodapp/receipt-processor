@@ -61,7 +61,8 @@ const FileUploader: React.FC = () => {
                 }
             }>
             <IonFabButton
-                className={styles.fab_btn}>
+                className={styles.fab_btn}
+                >
                 <IonIcon 
                     className={styles.icon }
                     icon={cameraOutline} 

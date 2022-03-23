@@ -1,21 +1,32 @@
 /* Stylesheet of ReceiptRecognitionWrapper.tsx */
 
-.grid_container {
-    padding: 12px;
-    height: 100%;
-    background: #f6f8f9;
+.content_container {
+    height: calc(100% - 56px);
+    --background: #f6f8f9;
 
-    .row {
+    .grid_container {
+        // padding: 12px;
         height: 100%;
-
-        .col {
+    
+        .row {
             height: 100%;
-
-            .card {
-                margin: 0;
+    
+            .col {
                 height: 100%;
-                border-radius: 8px;
+    
+                .card {
+                    margin: 0;
+                    height: 100%;
+                    border-radius: 8px;
+                }
             }
         }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 992px) {
+    .content_container {
+        height: 100%;
     }
 }

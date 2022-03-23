@@ -1,0 +1,63 @@
+/* Stylesheet of DynamicLabel.tsx */
+
+@import 'src/theme/shadow.scss';
+@import 'src/shared/animations/animation.scss';
+
+.dynamic_label_container {
+    margin: 0px 0px 42px 0px;
+
+    .label_container {
+        position: relative;
+        display: flex;
+        height: 56px;
+        align-items: center;
+        font-size: 16px;
+        background: #30394a;
+        color: #ffffff;
+        border-radius: 4px;
+
+        /* box-shadow */
+        box-shadow: $box-shadow;
+        -webkit-box-shadow: $webkit-box-shadow;
+        -moz-box-shadow: $moz-box-shadow;
+
+        .label {
+            margin: 0;
+            padding: 12px 0px 12px 12px;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        .icon {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .fab_btn {
+            --background: transparent;
+            --box-shadow: none;
+        }
+
+        .filter_fab_btn {
+            position: absolute;
+            right: 62px;
+        }
+
+        .chevron_fab_btn {
+            position: absolute;
+            right: 12px;
+        
+        }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 1024px) {
+    .dynamic_label_container {
+        .label_container {
+            .label {
+                font-size: 18px;
+            }
+        }
+    }
+}

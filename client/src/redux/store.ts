@@ -22,19 +22,27 @@ import storage from 'redux-persist/es/storage';
 import splitPaneReducer from 'src/redux/features/splitPaneSlice';
 import receiptReducer from 'src/redux/features/receiptSlice';
 import toastReducer from 'src/redux/features/toastSlice';
+import ocrResultsReducer from 'src/redux/features/ocrResultSlice';
 
-const persistConfig = {
+const receiptPersistConfig = {
     key: 'receipt',
     storage
 };
 
-const persistedReducer = persistReducer(persistConfig, receiptReducer);
+const OCRResultsPersistConfig = {
+    key: 'ocrResults',
+    storage
+};
+
+const persistedReceiptReducer = persistReducer(receiptPersistConfig, receiptReducer);
+const persisteOCRResultsReducer = persistReducer(OCRResultsPersistConfig, ocrResultsReducer);
 
 const store = configureStore({
     reducer: {
         splitPane: splitPaneReducer,
-        receipt: persistedReducer,
-        toast: toastReducer
+        receipt: persistedReceiptReducer,
+        toast: toastReducer,
+        ocrResults: persisteOCRResultsReducer
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

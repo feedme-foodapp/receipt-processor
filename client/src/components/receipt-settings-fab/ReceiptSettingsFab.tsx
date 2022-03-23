@@ -10,6 +10,10 @@ import {
     deleteReceipt
 } from 'src/redux/features/receiptSlice';
 
+import {
+    clearResults
+} from 'src/redux/features/ocrResultSlice';
+
 import  {
     handleShow,
     setToastContent
@@ -33,6 +37,7 @@ import {
 import styles from './ReceiptSettingsFab.module.scss';
 
 const ReceiptSettingsFab: React.FC = () => {
+    // const db = useIndexedDB('results');
     const dispatch = useDispatch();
 
     // showFabList
@@ -75,6 +80,7 @@ const ReceiptSettingsFab: React.FC = () => {
                                 color: '#77da85'
                             }));
                             dispatch(handleShow(true));
+                            dispatch(clearResults());
                         }
                     }>
                     <IonIcon icon={trashBinOutline} />

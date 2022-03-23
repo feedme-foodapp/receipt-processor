@@ -1,0 +1,31 @@
+/* Stylesheet of Toolbar.tsx */
+
+.header {
+    .toolbar {
+        --background: var(--ion-color-primeColor);
+    
+        .menu_btn {
+            margin: 0px 0px 0px 12px;
+            color: #ffffff;
+        }
+
+        .label_container {
+            margin: 0px 26px 0px 0px;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 18px;
+            color: #ffffff;
+            
+            span {
+                font-weight: lighter;
+            }
+        }
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 992px) {
+    .header {
+        display: none;
+    }
+}

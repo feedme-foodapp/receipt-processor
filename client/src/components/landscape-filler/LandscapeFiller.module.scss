@@ -1,0 +1,29 @@
+/* Stylesheet of LandscapeFiller.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.landscape_filler_container {
+    display: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #d2d7e2;
+
+    .icon {
+        text-align: center;
+        height: 162px;
+        width: 162px;
+        animation: turn_around $turn_around; 
+    }
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+
+@media screen and(max-height: 512px) {
+    @media screen and(orientation: landscape) {
+        .landscape_filler_container {
+            display: flex;
+        }
+    }
+}

@@ -3,9 +3,15 @@
 .fab_container {
     .fab_btn {
         --background: var(--ion-color-thirdColor);
+    }
+}
 
-        .icon {
+/* set Media Queries for different display sizes and orientation of devices */
 
+@media screen and(max-height: 512px) {
+    @media screen and(orientation: landscape) {
+        .fab_container {
+            display: none;
         }
     }
 }

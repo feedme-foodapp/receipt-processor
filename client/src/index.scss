@@ -1,0 +1,11 @@
+/* Stylesheet of index.tsx */
+
+
+html, body {
+    user-select: none;
+}
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+}

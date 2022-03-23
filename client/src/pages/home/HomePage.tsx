@@ -1,16 +1,6 @@
 /* React */
 import React, { useEffect } from 'react';
 
-/* Ionic */
-import {
-    IonPage,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonCard
-} from '@ionic/react';
-
 /* React-Redux */
 import {
     useDispatch
@@ -20,6 +10,14 @@ import {
     hide
 } from 'src/redux/features/splitPaneSlice';
 
+/* Ionic */
+import {
+    IonPage,
+    IonContent,
+    IonGrid,
+    IonRow
+} from '@ionic/react';
+
 /* Model(s) */
 import NavCardModel from 'src/shared/mocks/navCard';
 
@@ -28,6 +26,7 @@ import { NAV_CARDS } from 'src/shared/mocks/navCard';
 
 /* Component(s) */
 import HeroContainer from 'src/components/hero-container/HeroContainer';
+import NavCard from 'src/components/nav-card/NavCard';
 
 /* Stylesheet */
 import styles from './HomePage.module.scss';
@@ -40,37 +39,13 @@ const HomePage: React.FC = () => {
         dispatch(hide());
     }, [dispatch]);
 
-    const renderNavCards = navCards.map((navCard: NavCardModel) => {
-        return (
-            <IonCol
-                key={navCard.id}
-                className={styles.col}
-                sizeXs="12"
-                sizeXl="4">
-                <IonCard
-                    className={styles.card}
-                    button>
-                    <div
-                        style={{
-                            background: navCard.color
-                        }}
-                        className={styles.title_container}>
-                        <span className={styles.title}>
-                            {navCard.title}
-                        </span>
-                    </div>
-                </IonCard>
-            </IonCol>
-        );
-    });
-
     return (
         <IonPage>
             <IonContent className={styles.content_container}>
                 <HeroContainer />
                 <IonGrid className={styles.grid_container}>
                     <IonRow className={styles.row}>
-                        {renderNavCards}
+                        <NavCard navCards={navCards} />
                     </IonRow>
                 </IonGrid>
             </IonContent>

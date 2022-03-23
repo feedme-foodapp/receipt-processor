@@ -15,15 +15,20 @@ import {
 } from 'src/shared/mocks/dots';
 
 /* Stylesheet */
-import styles from './EmptyContainer.module.scss';
+import styles from './Illustrator.module.scss';
 
 /* Interface(s) */
-interface EmptyContainerProps {
+interface IllustratorProps {
     icon: string;
     title: string;
+    animation: boolean;
 }
 
-const CardHeader: React.FC<EmptyContainerProps> = ({ icon, title }) => {
+const Illustrator: React.FC<IllustratorProps> = ({ 
+    icon, 
+    title, 
+    animation 
+}) => {
     const dots: DotModel[] = DOTS;
 
     const renderDots = dots.map((dot: DotModel) => {
@@ -37,9 +42,12 @@ const CardHeader: React.FC<EmptyContainerProps> = ({ icon, title }) => {
     });
 
     return (
-        <div className={styles.empty_container}>
+        <div className={styles.placeholder_container}>
             <div className={styles.wrapper_container}>
-                <IonIcon className={styles.icon} icon={icon} />
+                <IonIcon 
+                    className={animation ? `${styles.icon} ${styles.icon_shaking}` : `${styles.icon} ${styles.icon_not_shaking}`} 
+                    icon={icon} 
+                />
                 <div className={styles.flex_container}>
                     <div className={styles.label_container}>
                         {title}
@@ -53,4 +61,4 @@ const CardHeader: React.FC<EmptyContainerProps> = ({ icon, title }) => {
     );
 };
 
-export default CardHeader;
+export default Illustrator;

@@ -33,7 +33,7 @@ import {
 } from '@ionic/react-router';
 
 /* Component(s) */
-import OCRTab from 'src/components/tabs/ocr/OCRTab';
+import OCRTab from 'src/tabs/ocr/OCRTab';
 
 /* Stylesheet */
 import styles from './ReceiptRecognitionPage.module.scss';
@@ -49,6 +49,7 @@ const ReceiptRecognitionPage: React.FC = () => {
     return (
         <IonPage>
             <IonReactRouter>
+                {/* Tab-Layout */}
                 <IonTabs className={styles.tab_container}>
                     <IonRouterOutlet>
                         <Switch>

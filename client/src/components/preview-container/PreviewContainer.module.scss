@@ -19,3 +19,12 @@
         -moz-box-shadow: $moz-box-shadow;
     }
 }
+
+/* set Media Queries for different display sizes and orientation of devices */
+@media screen and(max-height: 512px) {
+    @media screen and(orientation: landscape) {
+        .preview_container {
+            display: none;
+        }
+    }
+}

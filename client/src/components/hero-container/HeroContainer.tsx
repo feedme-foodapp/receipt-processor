@@ -6,9 +6,7 @@ import styles from './HeroContainer.module.scss';
 
 const HeroContainer: React.FC = () => {
     return (
-        <div className={styles.hero_container}>
-            
-        </div>
+        <div className={styles.hero_container} />
     );
 };
 

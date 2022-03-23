@@ -28,7 +28,7 @@
             
                     .icon {
                         position: absolute;
-                        left: 32px;
+                        left: 4px;
                         font-size: 28px;
                     }
             
@@ -43,3 +43,34 @@
 }
 
 /* set Media Queries for different display sizes and orientation of devices */
+@media screen and(min-width: 1200px) {
+    .sidemenu_container {
+        .content_container {
+            .wrapper_container {
+                .list_container {
+                    .btn {
+                        .icon {
+                            left: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 1720px) {
+    .sidemenu_container {
+        .content_container {
+            .wrapper_container {
+                .list_container {
+                    .btn {
+                        .icon {
+                            left: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

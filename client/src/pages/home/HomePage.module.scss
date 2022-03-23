@@ -12,37 +12,6 @@
     
         .row {
             height: 100%;
-            
-            .col {
-                display: flex;
-                align-items: center;
-                padding: 0px 16px 0px 16px;
-                height: 100%;
-        
-                .card {
-                    margin: 0;
-                    height: 80%;
-                    width: 100%;
-                    border-radius: 8px;
-    
-                    .title_container {
-                        display: flex;
-                        height: 72px;
-                        align-items: center;
-                        justify-content: center;
-
-                        /* box-shadow */
-                        box-shadow: $box-shadow;
-                        -webkit-box-shadow: $webkit-box-shadow;
-                        -moz-box-shadow: $moz-box-shadow;
-    
-                        .title {
-                            color: #ffffff;
-                            font-size: 18px;
-                        }
-                    }
-                }
-            }
         }
     }
 }

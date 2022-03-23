@@ -15,23 +15,16 @@ import ReceiptRecognitionWrapper from 'src/utils/wrapper/receipt-recognition/Rec
 
 /* Component(s) */
 import PreviewContainer from 'src/components/preview-container/PreviewContainer';
-import ResultsContainer from 'src/components/results-container/ResultsContainer';
-
-/* Stylesheet */
-// import styles from './OCRTab.module.scss';
+import OCRResultContainer from 'src/components/ocr/ocr-result-container/OCRResultContainer';
 
 const OCRTab: React.FC = () => {
     const receiptState = useSelector((state: RootState) => state.receipt);
 
-    console.log(receiptState.value)
-
     return (
-        <React.Fragment>
-            <ReceiptRecognitionWrapper>
-                <PreviewContainer receipt={receiptState.value} />
-                <ResultsContainer receipt={receiptState.value} />
-            </ReceiptRecognitionWrapper>
-        </React.Fragment>
+        <ReceiptRecognitionWrapper>
+            <PreviewContainer receipt={receiptState.receipt} />
+            <OCRResultContainer receipt={receiptState.receipt} />
+        </ReceiptRecognitionWrapper>
     );
 };
 
