@@ -48,17 +48,13 @@ Das folgende Use-Case Diagramm soll die zuvor genannten Funktionalitäten verans
 
 <br/>
 
-#### <ins>Detailierte Beschreibung:</ins>
+#### <ins>Anwendung & Codebeispiele:</ins>
 
 Für die Integration des Plugins muss der folgende Befehl ausgeführt werden:
 
 ```bash
 $ npm install @capacitor/camera
 ```
-
-<br/>
-
-##### <ins>Codebeispiele:</ins>
 
 <br/>
 
