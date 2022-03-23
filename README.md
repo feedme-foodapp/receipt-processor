@@ -48,6 +48,8 @@ Das folgende Use-Case Diagramm soll die zuvor genannten Funktionalitäten verans
 
 <br/>
 
+#### <ins>Allgemeine Funktionalitäten (Detail)</ins>
+
 Für die Integration des Plugins muss der folgende Befehl ausgeführt werden:
 
 ```bash
