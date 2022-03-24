@@ -51,6 +51,8 @@ https://capacitorjs.com/docs/apis/camera
 
 #### <ins>Anwendung & Codebeispiele:</ins>
 
+<br/>
+
 ```bash
 $ npm install @capacitor/camera
 ```
@@ -74,7 +76,7 @@ const takePicture = async () => {
 
 <br/>
 
-Nachdem das Foto gemacht wurde, wird dieses im *Redux-Store* als Base64 gespeichert. Das Redux-Feature *receiptSlice* wird im lokalen Storage des Browsers persistiert, um entsprechend nach dem Refresh weiterhin zur Verfügung zu stehen:
+Nachdem das Foto gemacht oder hochgeladen wurde, wird dieses im *Redux-Store* als Base64 gespeichert. Das Redux-Feature *receiptSlice* wird im lokalen Storage des Browsers mit dem Schlüssel (Key) *receipt* persistiert, um entsprechend nach dem Refresh weiterhin zur Verfügung zu stehen: 
 
 ```TSX
 import {
@@ -104,12 +106,10 @@ const takePicture = async () => {
 
 <br/>
 
-Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt, welcher die Property *receipt* übergeben wird.
-Ist kein Kassenbeleg vorhanden wird der *EmptyContainer* dargestellt, der lediglich dem Benutzer eine Beispiel-Illustration anzeigt.
-Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete Photo* der Komponente *ReceiptSettingsFab* zur Verfügung,
-welche als Fab-Button mit verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der Komponente dargestellt wird.
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt. Ist kein Kassabon vorhanden, wird dem Benutzer eine Illustration angezeigt.
+Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete Photo* der Komponente *ReceiptOptionFab* zur Verfügung, welche als Fab-Button mit den verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der entsprechenden Komponente dargestellt wird.
 
-![image](https://user-images.githubusercontent.com/93816646/149572482-80c4236d-17f4-49fe-b954-0c050095eb2b.png)
+![image](https://user-images.githubusercontent.com/93816646/160013265-71b01847-73a6-42cf-9b46-510b18dc42f6.png)
 
 <ins> </ins>
 
