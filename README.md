@@ -41,8 +41,6 @@ Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgerät
 
 https://capacitorjs.com/docs/apis/camera
 
-Das folgende Use-Case Diagramm soll die zuvor genannten Funktionalitäten veranschaulichen:
-
 <br/>
 
 <div align="center">
@@ -52,8 +50,6 @@ Das folgende Use-Case Diagramm soll die zuvor genannten Funktionalitäten verans
 <br/>
 
 #### <ins>Anwendung & Codebeispiele:</ins>
-
-Für die Integration des Plugins muss der folgende Befehl ausgeführt werden:
 
 ```bash
 $ npm install @capacitor/camera
