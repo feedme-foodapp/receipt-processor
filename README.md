@@ -2,7 +2,7 @@
 
 <br/>
 
-Als **Receipt Processor** wird das erste Feature der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäft aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits,
+Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäft aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits,
 die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
 
 
