@@ -111,7 +111,9 @@ Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete P
 
 ![image](https://user-images.githubusercontent.com/93816646/160013699-62ac8e93-b3c0-4b2f-bd3a-ac2952f25a1f.png)
 
-<ins> </ins>
+#### <ins>Herausforderungen & Lösungsansatz</ins>
+
+<br/>
 
 <br/>
 
