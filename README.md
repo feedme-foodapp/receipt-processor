@@ -13,8 +13,6 @@ Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung se
 implementiert ist. Um entsprechend robuste User Interfaces bereitzustellen, die einem nativen Aussehen und Verhalten nahe kommen, sowie sich individuell gestalten
 lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus entsprechend auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform des jeweiligen Endgeräts ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
 
-
-
 Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur* aufgebaut.
 
 <br/>
