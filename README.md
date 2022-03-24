@@ -6,10 +6,14 @@ Als **Receipt Processor** wird das erste Feature der Applikation **feedMe** beze
 die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
 
 
-#### <ins>Allgemeine Projektstruktur & Architektur:</ins>
+#### <ins>Allgemeine Ordnerstruktur & Architektur:</ins>
 
-Das Projekt lässt sich in verschiedene Ordner unterteilen. Der Ordner *receipt-processor* beinhaltet den gesamten Sourcecode, sowie die Dokumentation und Diagramme,
-die zur Veranschaulichung der einzelnen Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React* geschrieben ist. Um entsprechend robuste User Interfaces bereitzustellen, die einem nativen Aussehen und Verhalten sehr nahe kommen, sowie sich individuell gestalten lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus entsprechend auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform des jeweiligen Endgeräts ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
+Der Ordner *receipt-processor* beinhaltet den gesamten Sourcecode, sowie die Dokumentation und Diagramme, die zur Veranschaulichung der einzelnen
+Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React*
+implementiert ist. Um entsprechend robuste User Interfaces bereitzustellen, die einem nativen Aussehen und Verhalten nahe kommen, sowie sich individuell gestalten
+lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus entsprechend auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform des jeweiligen Endgeräts ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
+
+
 
 Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur* aufgebaut.
 
