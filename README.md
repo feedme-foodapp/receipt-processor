@@ -23,6 +23,8 @@ Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur
 
 <br/>
 
+<br/>
+
 Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorverarbeitung*, *Texterkennung*, *Informationsextraktion* und *Datenweiterverarbeitung* unterteilen, auf welche in den folgenden Abschnitt näher eingegangen wird:
 
 <div align="center">
