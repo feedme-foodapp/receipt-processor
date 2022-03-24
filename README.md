@@ -23,9 +23,7 @@ Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur
 
 <br/>
 
-Das Feature 1 lässt sich wiederum in die folgenden Prozess: Dokumenterfassung, 
-
-Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
+Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorverarbeitung*, *Texterkennung*, *Informationsextraktion* und *Datenweiterverarbeitung* unterteilen, auf welche in den folgenden Abschnitt näher eingegangen wird:
 
 <div align="center">
   <img src="./documentation/diagrams/feature1_process.svg"/>
