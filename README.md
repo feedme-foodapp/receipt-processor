@@ -21,9 +21,9 @@ Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur
   <img src="./documentation/diagrams/stack.svg"/>
 </div>
 
-//TODO:
-
 <br/>
+
+Das Feature 1 lässt sich wiederum in die folgenden Prozess: Dokumenterfassung, 
 
 Das Feature 1 lässt sich wiederum in die folgenden Prozesse unterteilen:
 
