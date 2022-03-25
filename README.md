@@ -33,9 +33,7 @@ Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorvera
 
 <br/>
 
-Entsprechend soll das folgende Diagramm den Ablauf der Applikation veranschaulichen:
 
-<br/
 
 ### **Dokumenterfassung**
 
