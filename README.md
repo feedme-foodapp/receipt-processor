@@ -6,7 +6,7 @@ Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **f
 die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
 
 
-#### <ins>Allgemeine Ordnerstruktur & Architektur:</ins>
+#### <ins>Architektur:</ins>
 
 Der Ordner *receipt-processor* beinhaltet den gesamten Sourcecode, sowie die Dokumentation und Diagramme, die zur Veranschaulichung der einzelnen
 Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung selbst bezeichnet, mit welcher der Benutzer direkt interagieren kann und in *React*
