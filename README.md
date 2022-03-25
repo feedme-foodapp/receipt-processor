@@ -116,6 +116,8 @@ const takePicture = async () => {
 
 Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt. Ist kein Kassabon vorhanden, wird dem Benutzer eine Illustration angezeigt und die Analysefunktion entsprechend verhindert. Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete Photo* der Komponente *ReceiptOptionFab* zur Verfügung, welche als Fab-Button mit den verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der entsprechenden Komponente dargestellt wird:
 
+<br />
+
 ![image](https://user-images.githubusercontent.com/93816646/160013699-62ac8e93-b3c0-4b2f-bd3a-ac2952f25a1f.png)
 
 #### <ins>Herausforderung & Lösungsansatz</ins>
