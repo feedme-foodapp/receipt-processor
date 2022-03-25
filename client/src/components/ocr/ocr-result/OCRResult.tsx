@@ -36,16 +36,17 @@ import DynamicLabel from 'src/components/dynamic-label/DynamicLabel';
 import OCRMetaInfo from 'src/components/ocr/ocr-meta-info/OCRMetaInfo';
 
 /* Stylesheet */
-import styles from './OCRResults.module.scss';
+import styles from './OCRResult.module.scss';
 
 /* Interface(s) */
-interface OCRResultsProps {
+interface OCRResultProps {
     results: OCRResultModel;
+    handleModal: Function;
 }
 
-const OCRResults: React.FC<OCRResultsProps> = ({ results }) => {
+const OCRResult: React.FC<OCRResultProps> = ({ results, handleModal }) => {
     const dispatch = useDispatch();
-    
+
     const renderResults = results.results.map((result: ResultsModel) => {
         return (
             <IonItemSliding key={result.id}>
@@ -62,16 +63,16 @@ const OCRResults: React.FC<OCRResultsProps> = ({ results }) => {
                     </div>
                 </IonItem>
                 <IonItemOptions className={styles.sliding_option_container}>
-                    <IonItemOption 
+                    <IonItemOption
                         className={styles.sliding_option}
                         onClick={
                             () => {
                                 dispatch(deleteResultById(result.id));
                             }
                         }>
-                        <IonIcon 
+                        <IonIcon
                             className={styles.icon}
-                            icon={trashBinOutline} 
+                            icon={trashBinOutline}
                         />
                     </IonItemOption>
                 </IonItemOptions>
@@ -80,44 +81,50 @@ const OCRResults: React.FC<OCRResultsProps> = ({ results }) => {
     });
 
     return (
-        <div
-            style={{
-                margin: results ? '0px 0px 0px 0px' : '42px 0px 42px 0px'
-            }}
-            className={styles.ocr_results_container}>
-            <div className={styles.title_container}>
-                <div className={styles.flex_container}>
-                    <IonIcon
-                        className={styles.title_icon}
-                        icon={'/assets/icon/ocr.svg'}
-                    />
-                    <h1 className={styles.title}>
-                        Receipt Results
-                    </h1>
-                    <IonFabButton className={styles.fab_btn}>
+        <div className={styles.ocr_result_container}>
+            <div className={styles.block_container}>
+                <div className={styles.title_container}>
+                    <div className={styles.flex_container}>
                         <IonIcon
-                            className={styles.modal_icon}
-                            icon={'/assets/icon/modal.svg'}
+                            className={styles.title_icon}
+                            icon={'/assets/icon/ocr.svg'}
                         />
-                    </IonFabButton>
+                        <h1 className={styles.title}>
+                            Receipt Results
+                        </h1>
+                        <IonFabButton 
+                            className={styles.fab_btn}
+                            onClick={
+                                () => {
+                                    handleModal(true);
+                                }
+                            }>
+                            <IonIcon
+                                className={styles.modal_icon}
+                                icon={'/assets/icon/modal.svg'}
+                            />
+                        </IonFabButton>
+                    </div>
                 </div>
+                <DynamicLabel
+                    label={'Meta-Info'}
+                    initialValue={false}
+                    showFilter={false}
+                    showIllustrator={false}>
+                    <OCRMetaInfo metaInfo={results.metaInfo} />
+                </DynamicLabel>
+                <DynamicLabel
+                    label={'Recognized-Text'}
+                    initialValue={true}
+                    showFilter={true}
+                    showIllustrator={true}>
+                    <IonList className={styles.results_container}>
+                        {renderResults}
+                    </IonList>
+                </DynamicLabel>
             </div>
-            <DynamicLabel
-                label={'Meta-Info'}
-                initialValue={true}
-                showFilter={false}>
-                <OCRMetaInfo metaInfo={results.metaInfo} />
-            </DynamicLabel>
-            <DynamicLabel
-                label={'Recognized-Text'}
-                initialValue={false}
-                showFilter={true}>
-                <IonList className={styles.results_container}>
-                    {renderResults}
-                </IonList>
-            </DynamicLabel>
         </div>
     );
 };
 
-export default OCRResults;
+export default OCRResult;

@@ -13,6 +13,12 @@
         width: 100%;
         border-radius: 21px;
         cursor: pointer;
+        border-radius: 12px;
+
+        /* box-shadow */
+        box-shadow: $box-shadow;
+        -webkit-box-shadow: $webkit-box-shadow;
+        -moz-box-shadow: $moz-box-shadow;
         
         .title_container {
             display: flex;
@@ -30,6 +36,21 @@
                 font-size: 18px;
             }
         }
+
+        .content_container {
+            display: flex;
+            height: calc(100% - 92px);
+            align-items: center;
+            justify-content: center;
+            
+            .block_container {
+                .icon {
+                    height: 92px;
+                    width: 92px;
+                    color: #b5c1cc;
+                }
+            }
+        }
     }
 }
 
@@ -40,6 +61,36 @@
 
         .card {
             height: 90%;
+        }
+    }
+}
+
+@media screen and(min-width: 1600px) {
+    .col {
+        .card {
+            .content_container {
+                .block_container {
+                    .icon {
+                        height: 112px;
+                        width: 112px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 1920px) {
+    .col {
+        .card {
+            .content_container {
+                .block_container {
+                    .icon {
+                        height: 121px;
+                        width: 121px;
+                    }
+                }
+            }
         }
     }
 }

@@ -30,13 +30,19 @@ import {
 import {
     settingsOutline,
     trashBinOutline,
+    imageOutline,
     informationCircleOutline
 } from 'ionicons/icons';
 
 /* Stylesheet */
-import styles from './ReceiptSettingsFab.module.scss';
+import styles from './ReceiptOptionFab.module.scss';
 
-const ReceiptSettingsFab: React.FC = () => {
+/* Interface(s) */
+interface ReceiptOptionFabProps {
+    handleModal: Function;
+}
+
+const ReceiptOptionFab: React.FC<ReceiptOptionFabProps> = ({ handleModal }) => {
     // const db = useIndexedDB('results');
     const dispatch = useDispatch();
 
@@ -58,7 +64,7 @@ const ReceiptSettingsFab: React.FC = () => {
                     }
                 }>
                 <IonIcon
-                    className={`${styles.icon}`}
+                    className={styles.icon}
                     icon={settingsOutline}
                 />
             </IonFabButton>
@@ -66,8 +72,13 @@ const ReceiptSettingsFab: React.FC = () => {
                 className={styles.fab_list}
                 side="top">
                 <IonFabButton
-                    className={styles.settings_btn}>
-                    <IonIcon />
+                    className={styles.processing_btn}
+                    onClick={
+                        () => {
+                            handleModal(true);
+                        }
+                    }>
+                    <IonIcon icon={imageOutline} />
                 </IonFabButton>
                 <IonFabButton
                     className={styles.trash_btn}
@@ -90,4 +101,4 @@ const ReceiptSettingsFab: React.FC = () => {
     );
 };
 
-export default ReceiptSettingsFab;
+export default ReceiptOptionFab;

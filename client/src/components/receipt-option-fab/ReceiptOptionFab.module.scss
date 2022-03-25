@@ -1,4 +1,4 @@
-/* Stylesheet of ReceiptSettingsFab.tsx */
+/* Stylesheet of ReceiptOptionFab.tsx */
 
 @import 'src/shared/animations/animation.scss';
 
@@ -19,7 +19,7 @@
     bottom: 16px;
     
     .open_list_fab {
-        --background: var(--ion-color-secColor);
+        --background: var(--ion-color-secondColor);
     }
 }
 
@@ -39,6 +39,11 @@
         .icon {
             font-size: 24px;
         }
+    }
+
+    .processing_btn {
+        --background: var(--ion-color-fourthColor);
+        --color: #ffffff;
     }
 }
 

@@ -4,7 +4,7 @@
 @import 'src/shared/animations/animation.scss';
 
 .dynamic_label_container {
-    margin: 0px 0px 42px 0px;
+    margin: 0px 0px 32px 0px;
 
     .label_container {
         position: relative;
@@ -49,15 +49,14 @@
         
         }
     }
+
+    .child_container {
+        margin: 12px 0px 0px 0px;
+    }
+
+    .illustrator_container {
+        margin: 72px 0px 0px 0px;
+    }
 }
 
 /* set Media Queries for different display sizes and orientation of devices */
-@media screen and(min-width: 1024px) {
-    .dynamic_label_container {
-        .label_container {
-            .label {
-                font-size: 18px;
-            }
-        }
-    }
-}

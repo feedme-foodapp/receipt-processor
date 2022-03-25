@@ -9,8 +9,12 @@ import {
 
 import {
     chevronUp,
-    chevronDown
+    chevronDown,
+    documentOutline
 } from 'ionicons/icons';
+
+/* Component(s) */
+import Illustrator from 'src/components/shared/illustrator/Illustrator';
 
 /* Stylesheet */
 import styles from './DynamicLabel.module.scss';
@@ -21,17 +25,19 @@ interface OCRDynamicLabelProps {
     initialValue: boolean;
     children: React.ReactNode;
     showFilter: boolean;
+    showIllustrator: boolean;
 }
 
 const OCRDynamicLabel: React.FC<OCRDynamicLabelProps> = ({
     label,
     initialValue,
     children,
-    showFilter
+    showFilter,
+    showIllustrator
 }) => {
 
-    // showMetaInfo
-    const [showMetaInfo, setShowMetaInfo] = useState<boolean>(initialValue);
+    // showDynamicContent
+    const [showDynamicContent, setShowDynamicContent] = useState<boolean>(initialValue);
 
     return (
         <div className={styles.dynamic_label_container}>
@@ -54,18 +60,31 @@ const OCRDynamicLabel: React.FC<OCRDynamicLabelProps> = ({
                     size="small"
                     onClick={
                         () => {
-                            setShowMetaInfo(!showMetaInfo);
+                            setShowDynamicContent(!showDynamicContent);
+                            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                            // handleIllustrator ? handleIllustrator(showDynamicContent ? true : false) : undefined;
                         }
                     }>
                     <IonIcon
                         className={`${styles.icon} ${styles.chevron_icon}`}
-                        icon={showMetaInfo ? chevronUp : chevronDown}
+                        icon={showDynamicContent ? chevronUp : chevronDown}
                     />
                 </IonFabButton>
             </div>
-            {showMetaInfo && (
+            {showDynamicContent && (
                 <div className={styles.child_container}>
                     {children}
+                </div>
+            )}
+            {!showDynamicContent && showIllustrator && (
+                <div className={styles.illustrator_container}>
+                    <Illustrator
+                        icon={documentOutline}
+                        iconHeight={'108px'}
+                        title={'List of OCR results'}
+                        showDots={false}
+                        animation={false}
+                    />
                 </div>
             )}
         </div>

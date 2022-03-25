@@ -16,13 +16,14 @@ import {
 } from 'src/shared/models/ocrResultModel';
 
 /* Component(s) */
-import Illustrator from 'src/components/illustrator/Illustrator';
+import Illustrator from 'src/components/shared/illustrator/Illustrator';
 import OCRProcessing from 'src/components/ocr/ocr-processing/OCRProcessing'
-import OCRResults from 'src/components/ocr/ocr-results/OCRResults';
-import ResultsModal from 'src/components/modals/results-modal/ResultsModal';
+import OCRResult from 'src/components/ocr/ocr-result/OCRResult';
+import ModalContainer from 'src/components/modals/ModalContainer';
 
 /* Stylesheet */
-import styles from './OCRResultContainer.module.scss';
+import styles from './OCRContainer.module.scss';
+import ModalContainerWrapper from '../../../utils/wrapper/modal-container/ModalContainerWrapper';
 
 /* Interface(s) */
 interface OCRResultContainerProps {
@@ -31,7 +32,7 @@ interface OCRResultContainerProps {
 
 // const CircularJSON = require('circular-json');
 
-const OCRResultContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
+const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
     const resultsState = useSelector((state: RootState) => state.ocrResults);
 
     // isProcessing
@@ -53,61 +54,68 @@ const OCRResultContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
 
     const [results, setResults] = useState<OCRResultModel>(defaultResults);
 
-    // showResultsModal
-    const [showResultsModal, setShowResultsModal] = useState<boolean>(false);
-
-    const handleShowResultsModal = (value: boolean) => {
-        setShowResultsModal(value);
-    }
-
     useEffect(() => {
         setResults(
             {
-                metaInfo: resultsState.ocrResults.metaInfo, 
+                metaInfo: resultsState.ocrResults.metaInfo,
                 results: resultsState.ocrResults.results
             }
         );
     }, [resultsState.ocrResults]);
-    
+
+    // showModal
+    const [showModal, setShowModal] = useState<boolean>(false);
+
+    const handleModal = (value: boolean) => {
+        setShowModal(value);
+    };
+
     return (
         <React.Fragment>
-            <ResultsModal
-                showResultsModal={showResultsModal}
-                handleShowResultsModal={handleShowResultsModal}
-            />
+            <ModalContainer
+                showModal={showModal}
+                handleModal={handleModal}>
+                <ModalContainerWrapper>
+                    <div>OCRContainer Modal</div>
+                </ModalContainerWrapper>
+            </ModalContainer>
             <div
                 style={{ height: results.results.length === 0 ? '100%' : '' }}
-                className={styles.results_container}>
+                className={styles.ocr_container}>
                 <div
                     style={{
-                        display: results.results.length === 0 ? 'flex' : 'block',
-                        width: results.results.length === 0 ? '90%' : '100%',
+                        display: results.results.length === 0 ? 'flex' : 'block'
                     }}
                     className={styles.flex_container}>
                     <div className={styles.btn_container}>
                         {!isProcessing ? (
                             <React.Fragment>
-                                {results.results.length === 0 ? (
-                                    <OCRProcessing 
-                                        receipt={receipt} 
+                                {results.results.length === 0 && (
+                                    <OCRProcessing
+                                        receipt={receipt}
                                         handleIsProcessing={handleIsProcessing}
                                     />
-                                ) : (
-                                    <OCRResults results={results} />
                                 )}
                             </React.Fragment>
                         ) : (
                             <Illustrator
                                 icon={'/assets/icon/glass.svg'}
                                 title={'Is processing'}
+                                showDots={true}
                                 animation={true}
                             />
                         )}
                     </div>
+                    {!isProcessing && results.results.length > 0 && (
+                        <OCRResult
+                            results={results}
+                            handleModal={handleModal}
+                        />
+                    )}
                 </div>
             </div>
         </React.Fragment>
     );
 };
 
-export default OCRResultContainer;
+export default OCRContainer;

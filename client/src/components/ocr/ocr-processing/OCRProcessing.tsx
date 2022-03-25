@@ -65,7 +65,7 @@ const OCRProcessing: React.FC<OCRProcessingProps> = ({ receipt, handleIsProcessi
     return (
         <div className={styles.ocr_processing_container}>
             <div className={styles.label_container}>
-                <div style={{ color: !receipt ? '#d2d7e2' : '#30394a' }}>Push <span style={{ color: !receipt ? '' : 'var(--ion-color-secColor)' }}>Analyze</span> to start Optical Character Recognition</div>
+                <div style={{ color: !receipt ? '#d2d7e2' : '#30394a' }}>Push <span style={{ color: !receipt ? '' : 'var(--ion-color-secondColor)' }}>Analyze</span> to start Optical Character Recognition</div>
             </div>
             <IonButton
                 className={styles.btn}

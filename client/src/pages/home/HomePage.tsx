@@ -19,7 +19,7 @@ import {
 } from '@ionic/react';
 
 /* Model(s) */
-import NavCardModel from 'src/shared/mocks/navCard';
+import NavCardModel from 'src/shared/models/navCardModel';
 
 /* Mock(s) */
 import { NAV_CARDS } from 'src/shared/mocks/navCard';

@@ -9,3 +9,11 @@ html, body {
     position: relative;
     overflow: hidden;
 }
+
+.scroll-content {
+	overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

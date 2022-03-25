@@ -1,21 +1,21 @@
-/* Stylesheet of OCRResultContainer.tsx */
+/* Stylesheet of OCRContainer.tsx */
 
-.results_container {
+.ocr_container {
     .flex_container {
         height: 100%;
+        width: 100%;
         align-items: center;
         justify-content: center;
-        margin: 0 auto;
-        
+
         .btn_container {
-            margin: 0 auto;
+            width: 90%;
         }
     }
 }
 
 /* set Media Queries for different display sizes and orientation of devices */
 @media screen and(min-width: 1024px) {
-    .results_container {
+    .ocr_container {
         .flex_container {
             .btn_container {
                 .label_container {
@@ -32,17 +32,19 @@
 }
 
 @media screen and(min-width: 1200px) {
-    .results_container {
+    .ocr_container {
+        height: 100%;
+
         .flex_container {
             .btn_container {
-                width: 90%;
+                width: 80%;
             }
         }
     }
 }
 
 @media screen and(min-width: 1920px) {
-    .results_container {
+    .ocr_container {
         .flex_container {
             .btn_container {
                 width: 60%;

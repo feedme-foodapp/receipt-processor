@@ -7,12 +7,13 @@ import {
 
 /* Ionic */
 import {
-    IonCard,
-    IonCol
+    IonCol,
+    IonIcon,
+    IonRippleEffect
 } from '@ionic/react';
 
 /* Model(s) */
-import NavCardModel from 'src/shared/mocks/navCard';
+import NavCardModel from 'src/shared/models/navCardModel';
 
 /* Stylesheet */
 import styles from './NavCard.module.scss';
@@ -32,9 +33,8 @@ const NavCard: React.FC<NavCardProps> = ({ navCards }) => {
                 className={styles.col}
                 sizeXs="12"
                 sizeXl="4">
-                <IonCard
-                    className={styles.card}
-                    button
+                <div
+                    className={`${styles.card} ion-activatable ripple-parent`}
                     onClick={
                         () => {
                             history.push(navCard.url);
@@ -45,11 +45,20 @@ const NavCard: React.FC<NavCardProps> = ({ navCards }) => {
                             background: navCard.color
                         }}
                         className={styles.title_container}>
-                        <span className={styles.title}>
+                        <div className={styles.title}>
                             {navCard.title}
-                        </span>
+                        </div>
                     </div>
-                </IonCard>
+                    <div className={styles.content_container}>
+                        <div className={styles.block_container}>
+                            <IonIcon 
+                                className={styles.icon}
+                                icon={navCard.icon} 
+                            />
+                        </div>
+                    </div>
+                    <IonRippleEffect />
+                </div>
             </IonCol>
         );
     });

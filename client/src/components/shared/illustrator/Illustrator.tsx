@@ -20,23 +20,27 @@ import styles from './Illustrator.module.scss';
 /* Interface(s) */
 interface IllustratorProps {
     icon: string;
+    iconHeight?: string;
     title: string;
+    showDots: boolean;
     animation: boolean;
 }
 
-const Illustrator: React.FC<IllustratorProps> = ({ 
-    icon, 
-    title, 
-    animation 
+const Illustrator: React.FC<IllustratorProps> = ({
+    icon,
+    iconHeight,
+    title,
+    showDots,
+    animation
 }) => {
     const dots: DotModel[] = DOTS;
 
     const renderDots = dots.map((dot: DotModel) => {
         return (
-            <IonIcon 
+            <IonIcon
                 key={dot.id}
-                className={`${styles[dot.commonClass]} ${styles[dot.individualClass]}`} 
-                icon={dot.icon} 
+                className={`${styles[dot.commonClass]} ${styles[dot.individualClass]}`}
+                icon={dot.icon}
             />
         );
     });
@@ -44,17 +48,22 @@ const Illustrator: React.FC<IllustratorProps> = ({
     return (
         <div className={styles.placeholder_container}>
             <div className={styles.wrapper_container}>
-                <IonIcon 
-                    className={animation ? `${styles.icon} ${styles.icon_shaking}` : `${styles.icon} ${styles.icon_not_shaking}`} 
-                    icon={icon} 
+                <IonIcon
+                    style={{
+                        height: iconHeight
+                    }}
+                    className={animation ? `${styles.icon} ${styles.icon_shaking}` : `${styles.icon} ${styles.icon_not_shaking}`}
+                    icon={icon}
                 />
                 <div className={styles.flex_container}>
                     <div className={styles.label_container}>
                         {title}
                     </div>
-                    <div className={styles.dot_container}>
-                        {renderDots}
-                    </div>
+                    {showDots && (
+                        <div className={styles.dot_container}>
+                            {renderDots}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

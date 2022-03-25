@@ -1,0 +1,14 @@
+/* Stylesheet of ModalContainer.tsx */
+
+.modal_container {
+    --border-radius: 12px;
+}
+
+/* set Media Queries for different display sizes and orientation of devices */
+
+@media screen and(min-width: 1024px) {
+    .modal_container {
+        --height: 90%;
+        --width: 90%;
+    }
+}
