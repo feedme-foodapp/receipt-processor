@@ -45,7 +45,7 @@ Mithilfe der Kamerafunktionalität des jeweiligen Endgeräts (z.B. Smartphone, T
 
 #### <ins>Allgemeine Funktionalitäten:</ins>
 
-Der Benutzer soll in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts (z.B. Smartphone, Laptop), ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung im lokalen Speicher des Browser zu persistieren. Das Bild kann dabei jederzeit geändert oder gelöscht werden. Für das Erfassen des Dokuments wird das Plugin *Camera* von *Capacitor* verwendet: 
+Wie bereits zuvor erwähnt, der Benutzer soll in der Lage sein mithilfe der Kamera des jeweiligen Endgeräts ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung im lokalen Speicher des Browsers zu speichern. Das Bild kann dabei jederzeit geändert oder gelöscht werden. Für das Erfassend es Dokuments wird das Plugin *Camera* von *Capacitor* verwendet:
 
 https://capacitorjs.com/docs/apis/camera
 
