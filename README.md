@@ -34,6 +34,8 @@ Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorvera
 <br/>
 
 
+![appflow](https://user-images.githubusercontent.com/93816646/160097275-f75ca21d-066c-42be-a50b-f0d70f233694.svg)
+
 
 ### **Dokumenterfassung**
 
