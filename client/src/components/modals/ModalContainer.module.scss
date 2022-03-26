@@ -1,14 +1,34 @@
 /* Stylesheet of ModalContainer.tsx */
 
+
 .modal_container {
-    --border-radius: 12px;
+    .content_container {
+        height: 100%;
+    }
 }
 
 /* set Media Queries for different display sizes and orientation of devices */
 
-@media screen and(min-width: 1024px) {
+@media screen and(max-height: 512px) {
+    @media screen and(orientation: landscape) {
+        .modal_container {
+            --height: 100% !important;
+            --width: 100% !important;
+            --border-radius: 0 !important;
+        }
+    }
+}
+
+@media screen and(min-width: 768px) {
     .modal_container {
         --height: 90%;
         --width: 90%;
+        --border-radius: 12px;
+    }
+}
+
+@media screen and(min-width: 1600px) {
+    .modal_container {
+        --width: 80%;
     }
 }

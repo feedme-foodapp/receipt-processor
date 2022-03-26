@@ -55,6 +55,7 @@ const ReceiptRecognitionWrapper: React.FC<RecognitionWrapperProps> = ({ children
         <React.Fragment>
             <Toolbar />
             <IonContent 
+                ref={ionContentRef}
                 className={styles.content_container}>
                 <motion.div
                     style={{

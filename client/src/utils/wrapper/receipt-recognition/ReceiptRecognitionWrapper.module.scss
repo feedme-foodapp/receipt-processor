@@ -5,6 +5,7 @@
     --background: #f6f8f9;
 
     .grid_container {
+        padding: 12px;
         height: 100%;
     
         .row {
@@ -27,5 +28,9 @@
 @media screen and(min-width: 992px) {
     .content_container {
         height: 100%;
+
+        .grid_container {
+            padding: 4px;
+        }
     }
 }

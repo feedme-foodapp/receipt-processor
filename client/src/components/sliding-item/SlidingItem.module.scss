@@ -1,0 +1,66 @@
+/* Stylesheet of SlidingItem.tsx */
+
+@import 'src/shared/animations/animation.scss';
+
+.line_item {
+    position: relative;
+    font-size: 16px;
+    border-bottom: 1px solid #d2d7e2;
+    cursor: pointer;
+    --background: transparent;
+    --background-hover: #f6f8f9;
+
+    .line {
+        padding: 18px 0px 18px 0px;
+
+        .text {
+            margin: 0px 0px 12px 0px;
+            font-weight: bolder;
+        }
+
+        .confidence {
+            font-size: 14px;
+            color: #384357;
+        }
+    }
+
+    &:hover {
+        background: #f6f8f9;
+    }
+}
+
+.sliding_options {
+    cursor: pointer;
+    
+    .icon {
+        font-size: 24px;
+    }
+
+    .edit {
+        width: 62px;
+        background: var(--ion-color-secondColor);
+    }
+    
+    .delete {
+        width: 62px;
+        background: var(--ion-color-thirdColor);
+    }
+
+    &:hover {
+        background: #f6f8f9;
+    }
+}
+
+.label {
+    margin: 0;
+    padding: 12px 0px 12px 0px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.results_container {
+    height: 100%;
+    user-select: none;
+    font-size: 16px;
+    animation: fade-in $OCRDynamicLabel;
+}

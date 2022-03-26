@@ -29,7 +29,7 @@ const ModalContainer: React.FC<ModalContainerProps> = ({ showModal, handleModal,
                     handleModal(false);
                 }
             }>
-            <div>
+            <div className={styles.content_container}>
                 <ModalCloseFab handleModal={handleModal} />
                 {children}
             </div>

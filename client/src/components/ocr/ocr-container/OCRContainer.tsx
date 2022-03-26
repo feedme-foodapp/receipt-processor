@@ -17,13 +17,13 @@ import {
 
 /* Component(s) */
 import Illustrator from 'src/components/shared/illustrator/Illustrator';
-import OCRProcessing from 'src/components/ocr/ocr-processing/OCRProcessing'
+import OCRProcessing from 'src/components/ocr/ocr-recognition/OCRRecognition'
 import OCRResult from 'src/components/ocr/ocr-result/OCRResult';
 import ModalContainer from 'src/components/modals/ModalContainer';
+import ModalContainerWrapper from 'src/utils/wrapper/modal-container/ModalContainerWrapper';
 
 /* Stylesheet */
 import styles from './OCRContainer.module.scss';
-import ModalContainerWrapper from '../../../utils/wrapper/modal-container/ModalContainerWrapper';
 
 /* Interface(s) */
 interface OCRResultContainerProps {
@@ -50,7 +50,7 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
             confidence: 0
         },
         results: []
-    }
+    };
 
     const [results, setResults] = useState<OCRResultModel>(defaultResults);
 
@@ -76,7 +76,13 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                 showModal={showModal}
                 handleModal={handleModal}>
                 <ModalContainerWrapper>
-                    <div>OCRContainer Modal</div>
+                    <OCRResult
+                        results={results}
+                        isModal={true}
+                        handleModal={handleModal}
+                        showSlidingOptions={true}
+                    />
+                    <></>
                 </ModalContainerWrapper>
             </ModalContainer>
             <div
@@ -109,7 +115,9 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                     {!isProcessing && results.results.length > 0 && (
                         <OCRResult
                             results={results}
+                            isModal={false}
                             handleModal={handleModal}
+                            showSlidingOptions={false}
                         />
                     )}
                 </div>

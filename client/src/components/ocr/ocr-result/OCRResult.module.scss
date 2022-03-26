@@ -62,65 +62,12 @@
                     --box-shadow: none;
                 }
             }
-        }
-    
-        .line_item {
-            position: relative;
-            font-size: 16px;
-            border-bottom: 1px solid #d2d7e2;
-            cursor: pointer;
-            --background: transparent;
-            --background-hover: #f6f8f9;
-    
-            .line {
-                padding: 18px 0px 18px 0px;
-    
-                .text {
-                    margin: 0px 0px 12px 0px;
-                    font-weight: bolder;
-                }
-    
-                .confidence {
-                    font-size: 14px;
-                    color: #384357;
-                }
-            }
-    
-            &:hover {
-                background: #f6f8f9;
-            }
-        }
-    
-        .sliding_option_container {
-            cursor: pointer;
-    
-            .sliding_option {
-                background: var(--ion-color-thirdColor);
-            
-                .icon {
-                    font-size: 21px;
-                }
-            }
-    
-            &:hover {
-                background: #f6f8f9;
-            }
-        }
-        
-        .label {
-            margin: 0;
-            padding: 12px 0px 12px 0px;
-            font-size: 16px;
-            font-weight: bolder;
-        }
-    
-        .results_container {
-            // margin: 21px 0px 0px 12px;
-            height: 100%;
-            user-select: none;
-            font-size: 16px;
-            animation: fade-in $OCRDynamicLabel
-        }
+        }   
+    }
+
+    .block_modal_container {
+        @extend .block_container;
+        width: 95%;
     }
 }
 
@@ -144,7 +91,10 @@
 @media screen and(min-width: 1200px) {
     .ocr_result_container {
         .block_container {
-            // margin: 32px 0px 32px 0px !important;
+            width: 90%;
+        }
+
+        .block_modal_container {
             width: 90%;
         }
     }
@@ -153,8 +103,11 @@
 @media screen and(min-width: 1620px) {
     .ocr_result_container {
         .block_container {
-            // margin: 42px 0px 42px 0px !important;
             width: 80%;
+        }
+
+        .block_modal_container {
+            width: 90%;
         }
     }
 }

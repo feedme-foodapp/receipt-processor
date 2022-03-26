@@ -26,15 +26,15 @@ import {
 } from 'src/shared/services/service-loader';
 
 /* Stylesheet */
-import styles from './OCRProcessing.module.scss';
+import styles from './OCRRecognition.module.scss';
 
 /* Interface(s) */
-interface OCRProcessingProps {
+interface OCRRecognitionProps {
     receipt: string;
     handleIsProcessing: Function;
 }
 
-const OCRProcessing: React.FC<OCRProcessingProps> = ({ receipt, handleIsProcessing }) => {
+const OCRRecognition: React.FC<OCRRecognitionProps> = ({ receipt, handleIsProcessing }) => {
     const dispatch = useDispatch();
 
     const addToResultsState = (results: any) => {
@@ -63,7 +63,7 @@ const OCRProcessing: React.FC<OCRProcessingProps> = ({ receipt, handleIsProcessi
     };
     
     return (
-        <div className={styles.ocr_processing_container}>
+        <div className={styles.ocr_recognition_container}>
             <div className={styles.label_container}>
                 <div style={{ color: !receipt ? '#d2d7e2' : '#30394a' }}>Push <span style={{ color: !receipt ? '' : 'var(--ion-color-secondColor)' }}>Analyze</span> to start Optical Character Recognition</div>
             </div>
@@ -90,4 +90,4 @@ const OCRProcessing: React.FC<OCRProcessingProps> = ({ receipt, handleIsProcessi
     );
 };
 
-export default OCRProcessing;
+export default OCRRecognition;
