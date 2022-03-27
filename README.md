@@ -186,3 +186,14 @@ Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attribu
 <br/>
 
 ### **Informationsextraktion**
+
+//TODO:
+
+### **Kassenbeleg (Kassabon) - Untersuchungsgegenstand**
+
+Die Kassenbelege der gängigen Lebensmittelgeschäfte in Tirol:
+
+- MPreis
+- Hofer
+- Spar
+- Billa Plus
