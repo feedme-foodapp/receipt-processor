@@ -130,8 +130,9 @@ Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeig
 
 <br/>
 
-Unter *Optical Character Recognition (OCR)*
+Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, vereinfachen und effizienter zu gestalten. 
 
+Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgrund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen, auch in Zukunft eine große Herausforderung dartstellen.
 
 Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalitäten:
 
@@ -166,66 +167,9 @@ Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Kompon
 Der Komponente selbst wird der Kassenbeleg als Property übergene. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Komponenten, die den Ablauf der Applikation veranschaulichen und andererseits zum Anzeigen der Ergebnisse nach der Texterkennung. Die Ergebnisse werden dabei im Local Storage des Browsers zwischengespeichert, um entsprechend nach dem Refresh der Seite weiterhin angezeigt werden zu können, bzw. für die weitere Verarbeitung bestehen zu bleiben:
 
 ```JSX
-const ResultsContainer: React.FC = ({ receipt } ) => {
-  const [isProcessing, setIsProcessing] = useState<boolean>(false);
-  const [results, setResults] = useState();
-    
-  const renderResults = () => {
-      if (results) {
-          return (
-              <div>
-                {/* display results */}
-              </div>
-          );
-      } else {
-          return (
-              <React.Fragment>
-                  {/* label container */}
-                  <IonButton
-                      className={styles.btn}
-                      expand="block"
-                      disabled={!receipt ? true : false}
-                      onClick={
-                          () => {
-                              setIsProcessing(true);
-                              ServiceLoader.tesseract().recognize(receipt).then((results: any) => {
-                                  localStorage.setItem('results', CircularJSON.stringify(results));
-                                  setResults(results);
-                                  setIsProcessing(false);
-                              });
-                          }
-                      }>
-                      <IonIcon
-                          className={styles.icon}
-                          icon={analyticsOutline}
-                      />
-                      Analyze
-                  </IonButton>
-              </React.Fragment>
-          );
-      }
-  };
-  
-  return (
-     <div className={styles.results_container}>
-        <div className={styles.flex_container}>
-            <div className={styles.btn_container}>
-                {!isProcessing ? (
-                    renderResults()
-                ) : (
-                    <Illustrator
-                        icon={'/assets/icon/glass.svg'}
-                        title={'Is processing'}
-                        animation={true}
-                    />
-                )}
-            </div>
-         </div>
-         <FileUploader />
-     </div>
-  );
-};
+
 ```
+
 <br/>
 
 
@@ -239,3 +183,6 @@ Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attribu
 ![image]{width: 420xpx;}(https://user-images.githubusercontent.com/93816646/158157569-26f11a6a-293f-4b7c-b131-2558cd016248.png)
 
 
+<br/>
+
+### **Informationsextraktion**
