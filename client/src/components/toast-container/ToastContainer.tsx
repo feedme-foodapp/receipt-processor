@@ -50,7 +50,7 @@ const ToastContainer: React.FC = () => {
                         style={{ background: toastState.content.color }}
                         className={styles.toast}>
                         <IonGrid className={styles.grid_container}>
-                            <IonRow>
+                            <IonRow className={styles.row}> 
                                 <IonCol
                                     className={styles.col}
                                     size="1">

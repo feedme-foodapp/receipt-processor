@@ -1,0 +1,11 @@
+/* Stylesheet of DeleteItemOption.tsx */
+
+.delete_option {
+    width: 62px;
+    background: var(--ion-color-thirdColor);
+    border-radius: 0px 12px 12px 0px;
+
+    .icon {
+        font-size: 24px;
+    }
+}

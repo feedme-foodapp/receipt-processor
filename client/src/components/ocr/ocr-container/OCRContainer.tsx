@@ -15,6 +15,11 @@ import {
     OCRResultModel
 } from 'src/shared/models/ocrResultModel';
 
+/* Mock(s) */
+import {
+    DEFAULT_RESULT
+} from 'src/shared/models/ocrResultModel';
+
 /* Component(s) */
 import Illustrator from 'src/components/shared/illustrator/Illustrator';
 import OCRProcessing from 'src/components/ocr/ocr-recognition/OCRRecognition'
@@ -30,10 +35,9 @@ interface OCRResultContainerProps {
     receipt: string;
 }
 
-// const CircularJSON = require('circular-json');
-
 const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
-    const resultsState = useSelector((state: RootState) => state.ocrResults);
+    const resultState = useSelector((state: RootState) => state.ocrResults);
+    console.log(resultState.ocrResults)
 
     // isProcessing
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -43,31 +47,30 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
     };
 
     // results
-    const defaultResults: OCRResultModel = {
-        metaInfo: {
-            lines: 0,
-            words: 0,
-            confidence: 0
-        },
-        results: []
-    };
-
-    const [results, setResults] = useState<OCRResultModel>(defaultResults);
+    const [results, setResults] = useState<OCRResultModel>(DEFAULT_RESULT);
 
     useEffect(() => {
         setResults(
             {
-                metaInfo: resultsState.ocrResults.metaInfo,
-                results: resultsState.ocrResults.results
+                metaInfo: resultState.ocrResults.metaInfo,
+                lines: resultState.ocrResults.lines
             }
         );
-    }, [resultsState.ocrResults]);
+    }, [resultState.ocrResults]);
 
     // showModal
     const [showModal, setShowModal] = useState<boolean>(false);
 
     const handleModal = (value: boolean) => {
         setShowModal(value);
+    };
+
+    const validResultLength = (results: OCRResultModel) => {
+        if(results.lines.length === 0) {
+            return true;
+        } else {
+            return false;
+        }
     };
 
     return (
@@ -86,17 +89,18 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                 </ModalContainerWrapper>
             </ModalContainer>
             <div
-                style={{ height: results.results.length === 0 ? '100%' : '' }}
+                style={{ 
+                    height: validResultLength(results) ? '100%' : '' }}
                 className={styles.ocr_container}>
                 <div
                     style={{
-                        display: results.results.length === 0 ? 'flex' : 'block'
+                        display: validResultLength(results) ? 'flex' : 'block'
                     }}
                     className={styles.flex_container}>
                     <div className={styles.btn_container}>
                         {!isProcessing ? (
                             <React.Fragment>
-                                {results.results.length === 0 && (
+                                {validResultLength(results) && (
                                     <OCRProcessing
                                         receipt={receipt}
                                         handleIsProcessing={handleIsProcessing}
@@ -112,7 +116,7 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                             />
                         )}
                     </div>
-                    {!isProcessing && results.results.length > 0 && (
+                    {!isProcessing && results.lines.length > 0 && (
                         <OCRResult
                             results={results}
                             isModal={false}

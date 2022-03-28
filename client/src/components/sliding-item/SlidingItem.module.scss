@@ -31,24 +31,6 @@
 
 .sliding_options {
     cursor: pointer;
-    
-    .icon {
-        font-size: 24px;
-    }
-
-    .edit {
-        width: 62px;
-        background: var(--ion-color-secondColor);
-    }
-    
-    .delete {
-        width: 62px;
-        background: var(--ion-color-thirdColor);
-    }
-
-    &:hover {
-        background: #f6f8f9;
-    }
 }
 
 .label {

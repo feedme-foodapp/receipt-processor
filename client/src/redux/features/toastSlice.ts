@@ -5,8 +5,6 @@ import {
     createSlice
 } from '@reduxjs/toolkit';
 
-import { informationOutline } from 'ionicons/icons';
-
 /* Interface(s) */
 interface ToastState {
     show: boolean;

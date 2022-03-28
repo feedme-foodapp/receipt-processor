@@ -1,0 +1,14 @@
+/* Stylesheet of SlidingEditInput.tsx */
+
+.sliding_edit_input_container {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;    
+    background: #ffffff;
+
+    .sliding_edit_input {
+        --padding-start: 21px !important;
+        height: 100%;
+    }
+}

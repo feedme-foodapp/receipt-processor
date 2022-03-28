@@ -21,8 +21,8 @@ import {
 } from 'ionicons/icons';
 
 /* Service(s) */
-import { 
-    ServiceLoader 
+import {
+    ServiceLoader
 } from 'src/shared/services/service-loader';
 
 /* Stylesheet */
@@ -40,28 +40,30 @@ const OCRRecognition: React.FC<OCRRecognitionProps> = ({ receipt, handleIsProces
     const addToResultsState = (results: any) => {
         const tmpOcrResults = {
             metaInfo: {
+                confidence: results.confidence,
                 lines: results.lines.length,
-                words: results.words.length,
-                confidence: results.confidence
+                words: results.words.length
             },
             //@ts-ignore
-            results: []
+            lines: []
         };
 
         // eslint-disable-next-line array-callback-return
         results.lines.map((line: any, index: number) => {
-            tmpOcrResults.results.push({
+            tmpOcrResults.lines.push({
                 //@ts-ignore
                 id: index,
                 //@ts-ignore
                 text: line.text,
                 //@ts-ignore
-                confidence: line.confidence
+                confidence: line.confidence,
+                //@ts-ignore
+                bbox: line.bbox
             })
         });
         dispatch(addResult(tmpOcrResults));
     };
-    
+
     return (
         <div className={styles.ocr_recognition_container}>
             <div className={styles.label_container}>
@@ -76,11 +78,12 @@ const OCRRecognition: React.FC<OCRRecognitionProps> = ({ receipt, handleIsProces
                         handleIsProcessing(true);
                         ServiceLoader.tesseract().recognize(receipt).then((results: any) => {
                             addToResultsState(results);
+                            console.log(results);
                             handleIsProcessing(false);
                         });
                     }
                 }>
-                <IonIcon 
+                <IonIcon
                     className={styles.icon}
                     icon={analyticsOutline}
                 />

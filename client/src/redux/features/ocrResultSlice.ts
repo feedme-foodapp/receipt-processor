@@ -8,7 +8,7 @@ import {
 /* Model(s) */
 import {
     OCRResultModel,
-    ResultsModel
+    ResultModel
 } from 'src/shared/models/ocrResultModel';
 
 /* Interface(s) */
@@ -19,11 +19,11 @@ interface ResultState {
 const initialState: ResultState = {
     ocrResults: {
         metaInfo: {
+            confidence: 0,
             lines: 0,
-            words: 0,
-            confidence: 0
+            words: 0
         },
-        results: []
+        lines: []
     }
 };
 
@@ -32,13 +32,20 @@ export const OCRResultsSlice = createSlice({
     initialState,
     reducers: {
         addResult: (state, action) => {
-            // state.ocrResults.push(action.payload);
-            console.log(action.payload)
             state.ocrResults = action.payload;
             
         },
         deleteResultById: (state, action) => {
-            state.ocrResults.results = state.ocrResults.results.filter((ocrResult: ResultsModel) => ocrResult.id !== action.payload);
+            state.ocrResults.lines = state.ocrResults.lines.filter((ocrResult: ResultModel) => ocrResult.id !== action.payload);
+        },
+        updateResult: (state, action) => {
+            state.ocrResults.lines.map((ocrResult: ResultModel, index: number) => {
+                if(ocrResult.id === action.payload.id) {
+                    return state.ocrResults.lines[index] = action.payload;
+                } else {
+                    return undefined;
+                }
+            })
         },
         clearResults: (state) => {
             state.ocrResults = initialState.ocrResults
@@ -49,6 +56,7 @@ export const OCRResultsSlice = createSlice({
 /* Action(s) */
 export const {
     addResult,
+    updateResult,
     deleteResultById,
     clearResults
 } = OCRResultsSlice.actions;

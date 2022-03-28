@@ -35,7 +35,6 @@ const OCRResult: React.FC<OCRResultProps> = ({
     handleModal,
     showSlidingOptions,
 }) => {
-
     return (
         <div className={styles.ocr_result_container}>
             <div className={isModal ? styles.block_modal_container : styles.block_container}>
