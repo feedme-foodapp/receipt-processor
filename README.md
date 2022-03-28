@@ -2,8 +2,15 @@
 
 <br/>
 
-Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäft aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits,
-die smarte Digitalisierung des Kassenbelegs ermöglichen, um den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
+#### <ins>Allgemeiner Überblick</ins>
+
+Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäfts aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits, die smarte Digitalisierung des Kassenbelegs ermöglichen, um folglich den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
+
+Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten.
+
+Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen eines Dokuments oder Bildes, auch in Zukunft eine große Herausforderung darstellen.
+
+
 
 
 #### <ins>Architektur:</ins>
@@ -33,7 +40,7 @@ Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorvera
 
 <br/>
 
-#### <ins>Anwendung & Allgemeiner Ablauf:</ins>
+#### <ins>Anwendung & allgemeiner Ablauf:</ins>
 
 Mithilfe der Kamerafunktionalität des jeweiligen Endgeräts (z.B. Smartphone, Tablet, Laptop, etc.) soll ein Foto von dem gewünschten Kassenbeleg gemacht werden, welches anschließend im lokalen Speicher (Local Storage) des Browsers persistiert wird. Der Benutzer ist in der Lage das Bild entsprechend vorzuverarbeiten, sprich verschiedene Verfahren der Bildvorverarbeitung anzuwenden, um folglich den Prozess der Texterkennung zu vereinfachen und die Genauigkeit der Ergebnisse zu erhöhen. Nach der Texterkennung können verschiedene Methoden der Extraktion von Informationen angewendet werden, um diese entsprechend so aufzubereiten, dass deren Metainformationen mithilfe einer Datenbank für die Applikation gewonnen werden können:
 
@@ -128,13 +135,13 @@ Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeig
 
 <br/>
 
-### **Texterkennung (Optical Character Recognition)**
+### **Texterkennung - Optical Character Recognition (OCR)**
 
 <br/>
 
-Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, vereinfachen und effizienter zu gestalten. 
+Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten.
 
-Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgrund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen, auch in Zukunft eine große Herausforderung dartstellen.
+Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen eines Dokuments oder Bildes, auch in Zukunft eine große Herausforderung darstellen.
 
 Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalitäten:
 
@@ -166,7 +173,7 @@ $ npm install tesseract.ts
 
 Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Komponente ermöglicht es, dem Benutzer nach dem Upload des Kassenbelegs auf *Analyisieren* zu klicken. Ist die Analyse abgeschlossen, werden die Ergebnisse entsprechend angezeigt. Neben dem farbigen Hervorheben mit Bounding-Boxen, soll zusätzlich beim Hovern über das entsprechende Wort, die Genauigkeit (Accuracy) dargestellt werden.
 
-Der Komponente selbst wird der Kassenbeleg als Property übergene. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Komponenten, die den Ablauf der Applikation veranschaulichen und andererseits zum Anzeigen der Ergebnisse nach der Texterkennung. Die Ergebnisse werden dabei im Local Storage des Browsers zwischengespeichert, um entsprechend nach dem Refresh der Seite weiterhin angezeigt werden zu können, bzw. für die weitere Verarbeitung bestehen zu bleiben:
+Der Komponente selbst wird der Kassenbeleg als Property übergeben. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Komponenten, die den Ablauf der Applikation veranschaulichen und andererseits zum Anzeigen der Ergebnisse nach der Texterkennung. Die Ergebnisse werden dabei im Local Storage des Browsers zwischengespeichert, um entsprechend nach dem Refresh der Seite weiterhin angezeigt werden zu können, bzw. für die weitere Verarbeitung bestehen zu bleiben:
 
 ```JSX
 
