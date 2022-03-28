@@ -33,7 +33,9 @@ Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorvera
 
 <br/>
 
-Mithilfe der Kamerafunktionalität des jeweiligen Endgeräts (z.B. Smartphone, Tablet, Laptop, etc.) soll ein Foto von dem gewünschten Kassenbeleg gemacht werden, welches anschließend im lokalen Speicher des Browsers persistiert wird. Der Benutzer ist in der Lage das Bild entsprechend vorzuverarbeiten, sprich nur ein Teil des Bildes auszuschneiden, sowie verschiedene Algorithmen der Bildvorverarbeitung anzuwenden, um folglich den Prozess der Texterkennung zu vereinfachen. Die Extraktion der Informationen erfolgt mithilfe von *Tesseract*, welche anschließend so aufbereitet werden, um dessen Metainformationen (Nährwerte, etc.) anhand einer Lebensmitteldatenbank zu gewinnen. Die Metainformationen können wiederum von der Anwendung weiterverarbeitet werden:
+#### <ins>Anwendung & Allgemeiner Ablauf:</ins>
+
+Mithilfe der Kamerafunktionalität des jeweiligen Endgeräts (z.B. Smartphone, Tablet, Laptop, etc.) soll ein Foto von dem gewünschten Kassenbeleg gemacht werden, welches anschließend im lokalen Speicher (Local Storage) des Browsers persistiert wird. Der Benutzer ist in der Lage das Bild entsprechend vorzuverarbeiten, sprich verschiedene Verfahren der Bildvorverarbeitung anzuwenden, um folglich den Prozess der Texterkennung zu vereinfachen und die Genauigkeit der Ergebnisse zu erhöhen. Nach der Texterkennung können verschiedene Methoden der Extraktion von Informationen angewendet werden, um diese entsprechend so aufzubereiten, dass deren Metainformationen mithilfe einer Datenbank für die Applikation gewonnen werden können:
 
 <br />
 
