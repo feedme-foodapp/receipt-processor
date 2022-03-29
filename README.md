@@ -139,11 +139,7 @@ Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeig
 
 <br/>
 
-Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten.
-
-Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen eines Dokuments oder Bildes, auch in Zukunft eine große Herausforderung darstellen.
-
-Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalitäten:
+Wie bereits zuvor erwähnt, wird als *Optical Character Recognition (OCR)* ganz allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten. 
 
 <div align="center">
   <img src="./documentation/diagrams/use_case3.svg"/>
@@ -151,15 +147,12 @@ Das folgende Use-Case Diagramm veranschaulicht die zuvor genannten Funktionalit�
 
 <br/>
 
+Dabei soll der Benutzer in der Lage sein.... //TODO
+
 
 #### Tesseract.js
 
-*Tesseract.js* ist eine frei verfügbare (Open-Source) JavaScript-Bibliothek, welche die original in C geschriebene Bibliothek *Tesseract* kompiliert und mithilfe von
-*WebAssembly* für den Browser ausführbare macht. Die Texterkennung erfolgt dabei anhand eines *neuronalen Netzwerks*, das wiederum auf dem Prinzip
-*LSTM (Long Short-Term Memory)* basiert, um entsprechend möglichst akkurate Ergebnisse beim Erkennungsprozess zu erzielen.
-
-Für die Integration von Tesseract muss der folgende Befehl ausgeführt werden. Die Applikation selbst ist dabei ausschließlich in *TypeScript*
-(Superset von JavaScript) geschrieben, wodurch für alle Bibliotheken entsprechend die dazugehörigen Datentypen (Types) installiert werden:
+*Tesseract.js* ist eine frei verfügbare (Open-Source) JavaScript-Bibliothek, welche die original in C geschriebene Bibliothek *Tesseract* kompiliert und mithilfe von *WebAssembly* für den Browser ausführbar macht. Die Texterkennung erfolgt dabei anhand eines *neuronalen Netzwerks*, das wiederum auf dem Prinzip *LSTM (Long Short-Term Memory)* basiert, um entsprechend möglichst akkurate Ergebnisse beim Erkennenungsprozess zu erzielen.
 
 ```bash
 $ npm install tesseract.ts
@@ -171,9 +164,6 @@ $ npm install tesseract.ts
 
 <br/>
 
-Der Prozess der Texterkennung selbst erfolgt im *ResultsContainer*. Diese Komponente ermöglicht es, dem Benutzer nach dem Upload des Kassenbelegs auf *Analyisieren* zu klicken. Ist die Analyse abgeschlossen, werden die Ergebnisse entsprechend angezeigt. Neben dem farbigen Hervorheben mit Bounding-Boxen, soll zusätzlich beim Hovern über das entsprechende Wort, die Genauigkeit (Accuracy) dargestellt werden.
-
-Der Komponente selbst wird der Kassenbeleg als Property übergeben. Die States *isProcessing* und *results* dienen einerseits zur Darstellung von Komponenten, die den Ablauf der Applikation veranschaulichen und andererseits zum Anzeigen der Ergebnisse nach der Texterkennung. Die Ergebnisse werden dabei im Local Storage des Browsers zwischengespeichert, um entsprechend nach dem Refresh der Seite weiterhin angezeigt werden zu können, bzw. für die weitere Verarbeitung bestehen zu bleiben:
 
 ```JSX
 
@@ -187,12 +177,13 @@ Der Komponente selbst wird der Kassenbeleg als Property übergeben. Die States *
 
 #### Result-Objekt
 
-Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attributen, das nach dem erfolgreichen Erkennungsprozess von Tesseract zurückgegeben wird:
+Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attributen, welches nach dem Erkennungsprozess von Tesseract zurückgegeben wird:
 
-![image]{width: 420xpx;}(https://user-images.githubusercontent.com/93816646/158157569-26f11a6a-293f-4b7c-b131-2558cd016248.png)
-
+//TODO: Image Result-Objekt
 
 <br/>
+
+Das Objekt selbst ist allerdings äußerst komplex aufgebaut und weist zudem zirkulare Abhängigkeiten zwischen den einzelnen Attributen auf. Folglich muss das Objekt entsprechend vereinfacht werden, um dieses
 
 ### **Informationsextraktion**
 
