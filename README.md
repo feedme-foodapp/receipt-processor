@@ -183,7 +183,25 @@ Die folgende Abbildung veranschaulicht das Objekt mit den entsprechenden Attribu
 
 <br/>
 
-Das Objekt selbst ist allerdings äußerst komplex aufgebaut und weist zudem zirkulare Abhängigkeiten zwischen den einzelnen Attributen auf. Folglich muss das Objekt entsprechend vereinfacht werden, um dieses
+Das Objekt ist allerdings äußerst komplex aufgebaut und weist zirkulare Abhängigen und Strukturen auf. Folglich muss das Objekt vor der Weiterverarbeitung  vereinfacht werden, um dieses entsprechend im Redux-Store sowie lokalen Speicher persistieren zu können. 
+
+```bash
+{
+  metaInfo: {
+    confidence: 80,
+    lines: 42,
+    word: 192
+  },
+  lines: [
+    {
+      id: 0,
+      confidence: 
+    }
+  ]
+}
+```
+
+<br />
 
 ### **Informationsextraktion**
 
