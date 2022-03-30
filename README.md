@@ -40,8 +40,7 @@ Mithilfe der Kamerafunktionalität des jeweiligen Endgeräts (z.B. Smartphone, T
 
 <br/>
 
-Das Feature 1 lässt sich wiederum in die Unterprozesse *Dokumenterfassung*, *Vorverarbeitung*, *Texterkennung*, *Informationsextraktion* und *Datenweiterverarbeitung*
-unterteilen:
+Das Feature 1 lässt sich entsprechend in die Unterprozesse *Dokumenterfassung*, *Vorverarbeitung*, *Texterkennung*, *Informationsextraktion* und *Datenweiterverarbeitung* unterteilen:
 
 <div align="center">
   <img src="./documentation/diagrams/feature1_process.svg"/>
