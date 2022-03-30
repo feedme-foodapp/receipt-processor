@@ -2,16 +2,15 @@
 
 <br/>
 
-#### <ins>Allgemeiner Überblick:</ins>
+#### <ins>Grundlegende Idee & allgemeiner Überblick:</ins>
 
-Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, welches den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäfts aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll einerseits den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie andererseits, die smarte Digitalisierung des Kassenbelegs ermöglichen, um folglich den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
+Als **Receipt Processor** wird das erste Feature (Feature 1) der Applikation **feedMe** bezeichnet, das den grundlegenden Prozess der Extraktion von relevanten Informationen, die auf dem Kassenbeleg (Kassabon) eines Lebensmittelgeschäfts aufgelistet werden, mithilfe der Methoden von **OCR (Optical Character Recognition)** umfasst. Das Feature soll dabei den allgemeinen Ablauf der Aufzeichnung und Verfolgung, sprich die Verwaltung von Lebensmitteln vereinfachen, sowie die smarte Digitalisierung des Kassenbelegs ermöglichen, um folglich den Prozess der manuellen Eingabe bereits erworbener Produkte zu automatisieren.
 
-Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchstaben, Zeichen, etc.) bezeichnet, um die maschinelle Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten.
+Als *Optical Character Recognition (OCR)* wird allgemein der Prozess der Erkennung, Digitalisierung und Aufteilung eines Dokuments als auch Bildes mit textlichen Inhalt, in dessen einzelne Bestandteile (Wörter, Buchsteben, Zeichen, etc.) bezeichnet, um die maschineller Verarbeitung von Informationen zu ermöglichen, zu vereinfachen und effizienter zu gestalten.
 
-Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachten des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen eines Dokuments oder Bildes, auch in Zukunft eine große Herausforderung darstellen.
+Im Gegensatz zum Menschen sind Computer aufgrund des mangelnden Wissens und Erfahrungswerts kaum in der Lage, spezifische und kontextbezogene Informationen lediglich durch das Betrachtend des jeweiligen Gegenstands, intuitiv und vollständig zu erfassen. Trotz einer jahrzehntelangen, intensiven Forschung bleibt die Umsetzung eines OCR-Systems mit vergleichbaren Fähigkeiten noch unerreicht. Aufgrund der großen Vielfalt an Sprachen, der unterschiedlichen Schriftarten und -Stile, als auch der komplexen Regeln in der Grammatik, wird der Prozess der Extraktion relevanter Informationen eines Dokuments, bzw. Bildes auch in Zukunf eine große Herausforderung darstellen.
 
-
-
+<br/>
 
 #### <ins>Architektur:</ins>
 
@@ -20,7 +19,7 @@ Kernfunktionalitäten der Applikation dienen. Als *client* wird die Anwendung se
 implementiert ist. Um entsprechend robuste User Interfaces bereitzustellen, die einem nativen Aussehen und Verhalten nahe kommen, sowie sich individuell gestalten
 lassen, wurde das Framework *Ionic* integriert. Dadurch wird der Fokus entsprechend auf die Entwicklung einer progressiven Webapplikation gelegt, die sich unabhängig von der Plattform des jeweiligen Endgeräts ausführen lässt und native Funktionalitäten, wie z.B. Kamera, Push Notifications, etc. zur Verfügung stellt.
 
-Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur* aufgebaut.
+Entsprechend ist die Anwendung nach dem Prinzip der *Client-Server-Architektur* aufgebaut:
 
 <br/>
 
@@ -29,8 +28,9 @@ Entsprechend ist die Applikation nach dem Prinzip der *Client-Server-Architektur
 </div>
 
 <br/>
-
 <br/>
+
+Das Feature 1 lässt sich wiederum in die Sub-Prozesse *Dokumenterfassung*, *Vor 
 
 Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorverarbeitung*, *Texterkennung*, *Informationsextraktion* und *Datenweiterverarbeitung* unterteilen:
 
@@ -38,6 +38,7 @@ Das Feature 1 lässt sich wiederum in die Prozesse *Dokumenterfassung*, *Vorvera
   <img src="./documentation/diagrams/feature1_process.svg"/>
 </div>
 
+<br/>
 <br/>
 
 #### <ins>Anwendung & allgemeiner Ablauf:</ins>
