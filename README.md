@@ -53,7 +53,7 @@ Das Feature 1 lässt sich entsprechend in die Unterprozesse *Dokumenterfassung*,
 
 #### <ins>Allgemeine Funktionalitäten:</ins>
 
-Wie bereits zuvor erwähnt, der Benutzer soll in der Lage sein mithilfe der Kamera des jeweiligen Endgeräts ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung im lokalen Speicher des Browsers zu speichern. Das Bild kann dabei jederzeit geändert oder gelöscht werden. Für das Erfassend es Dokuments wird das Plugin *Camera* von *Capacitor* verwendet:
+Wie bereits zuvor erwähnt soll der Benutzer in der Lage sein, mithilfe der Kamera des jeweiligen Endgeräts, ein Bild von dem gewünschten Kassenbeleg zu machen und diesen für die Weiterverarbeitung zu persistieren. Das Bild kann dabei jederzeit geändert oder gelöscht werden. Für das Erfassen des Kassenbelegs wird das Plugin *Camera* von *Capacitor* verwendet:
 
 https://capacitorjs.com/docs/apis/camera
 
@@ -92,7 +92,7 @@ const takePicture = async () => {
 
 <br/>
 
-Nachdem das Foto gemacht oder hochgeladen wurde, wird dieses im *Redux-Store* als Base64 gespeichert. Das Redux-Feature *receiptSlice* wird im lokalen Storage des Browsers mit dem Schlüssel (Key) *receipt* persistiert, um entsprechend nach dem Refresh weiterhin zur Verfügung zu stehen: 
+Nachdem das Foto gemacht oder hochgeladen wurde, wird dieses im *Redux-Store* als Base64 gespeichert. Das Redux-Feature *receiptSlice* wird im lokalen Storage des Browsers mit dem Schlüssel *receipt* gespeichert, um entsprechend nach dem Refresh für die Weiterverarbeitung zur Verfügung zu stehen:
 
 ```TSX
 import {
@@ -122,7 +122,7 @@ const takePicture = async () => {
 
 <br/>
 
-Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt. Ist kein Kassabon vorhanden, wird dem Benutzer eine Illustration angezeigt und die Analysefunktion entsprechend verhindert. Nach dem Hinzufügen stehen die Funktionalitäten *Pre-Processing* und *Delete Photo* der Komponente *ReceiptOptionFab* zur Verfügung, welche als Fab-Button mit den verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der entsprechenden Komponente dargestellt wird:
+Der Kassenbeleg wird anschließend in der Komponente *PreviewContainer* angezeigt. Ist kein Kassabon vorhanden, wird dem Benutzer eine Illustration angezeigt und die Funktionalität der Analyse entsprechend verhindert. Nach dem Hinzufügen stehen die Methoden *Pre-Processing* und *Delete Photo* der Komponente *ReceiptOptionFab* zur Verfügung, welche als Fab-Button mit den verschiedenen Auswahlmöglichkeiten, am rechten unteren Rand der jeweiligen Komponente dargestellt wird:
 
 <br />
 
