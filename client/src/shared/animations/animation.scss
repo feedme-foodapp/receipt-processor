@@ -96,3 +96,14 @@ $glass: shaking 1s ease-in-out infinite alternate;
 
 $turn_around: 2s ease-in-out infinite alternate;
 
+@keyframes roll-right {
+    0% {
+        transform: translateX(-21px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+$fab-btn: 0.25s ease-in-out;
+

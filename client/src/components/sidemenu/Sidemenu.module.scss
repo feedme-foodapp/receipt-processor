@@ -7,7 +7,8 @@
 
     .content_container {
         height: 100%;
-        --background: var(--ion-color-primeColor);
+        // --background: var(--ion-color-primeColor);
+        --background: url('/assets/img/menu-background.svg') center/cover;
 
         .wrapper_container {
             height: 90%;

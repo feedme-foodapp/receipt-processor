@@ -1,18 +1,13 @@
 /* React */
 import React from 'react';
 
-import { 
-  initDB 
-} from 'react-indexed-db';
-
-import {
-  DBConfig
-} from 'src/config/DBConfig';
-
 /* Ionic */
 import {
   IonApp
 } from '@ionic/react';
+
+/* Util(s) */
+import MainRouter from 'src/utils/router/main-router/MainRouter';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,13 +28,8 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-/* Util(s) */
-import MainRouter from 'src/utils/router/main-router/MainRouter';
-
 /* Component(s) */
 import ToastContainer from 'src/components/toast-container/ToastContainer';
-
-initDB(DBConfig);
 
 const App: React.FC = () => {
   return (

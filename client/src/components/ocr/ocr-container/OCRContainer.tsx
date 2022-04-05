@@ -37,7 +37,6 @@ interface OCRResultContainerProps {
 
 const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
     const resultState = useSelector((state: RootState) => state.ocrResults);
-    console.log(resultState.ocrResults)
 
     // isProcessing
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -46,16 +45,10 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
         setIsProcessing(value);
     };
 
-    // results
-    const [results, setResults] = useState<OCRResultModel>(DEFAULT_RESULT);
+    const [result, setResult] = useState<OCRResultModel>(DEFAULT_RESULT);
 
     useEffect(() => {
-        setResults(
-            {
-                metaInfo: resultState.ocrResults.metaInfo,
-                lines: resultState.ocrResults.lines
-            }
-        );
+        setResult(resultState.ocrResults);
     }, [resultState.ocrResults]);
 
     // showModal
@@ -65,8 +58,8 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
         setShowModal(value);
     };
 
-    const validResultLength = (results: OCRResultModel) => {
-        if(results.lines.length === 0) {
+    const validResultLength = (result: OCRResultModel) => {
+        if(result.lines.length === 0) {
             return true;
         } else {
             return false;
@@ -80,7 +73,7 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                 handleModal={handleModal}>
                 <ModalContainerWrapper>
                     <OCRResult
-                        results={results}
+                        result={result}
                         isModal={true}
                         handleModal={handleModal}
                         showSlidingOptions={true}
@@ -90,17 +83,17 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
             </ModalContainer>
             <div
                 style={{ 
-                    height: validResultLength(results) ? '100%' : '' }}
+                    height: validResultLength(result) ? '100%' : '' }}
                 className={styles.ocr_container}>
                 <div
                     style={{
-                        display: validResultLength(results) ? 'flex' : 'block'
+                        display: validResultLength(result) ? 'flex' : 'block'
                     }}
                     className={styles.flex_container}>
                     <div className={styles.btn_container}>
                         {!isProcessing ? (
                             <React.Fragment>
-                                {validResultLength(results) && (
+                                {validResultLength(result) && (
                                     <OCRProcessing
                                         receipt={receipt}
                                         handleIsProcessing={handleIsProcessing}
@@ -116,9 +109,9 @@ const OCRContainer: React.FC<OCRResultContainerProps> = ({ receipt }) => {
                             />
                         )}
                     </div>
-                    {!isProcessing && results.lines.length > 0 && (
+                    {!isProcessing && result.lines.length > 0 && (
                         <OCRResult
-                            results={results}
+                            result={result}
                             isModal={false}
                             handleModal={handleModal}
                             showSlidingOptions={false}

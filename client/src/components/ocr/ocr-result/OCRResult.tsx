@@ -8,11 +8,6 @@ import {
     IonList
 } from '@ionic/react';
 
-/* Model(s) */
-import {
-    OCRResultModel
-} from 'src/shared/models/ocrResultModel';
-
 /* Component(s) */
 import DynamicLabel from 'src/components/dynamic-label/DynamicLabel';
 import OCRMetaInfo from 'src/components/ocr/ocr-meta-info/OCRMetaInfo';
@@ -23,14 +18,14 @@ import styles from './OCRResult.module.scss';
 
 /* Interface(s) */
 interface OCRResultProps {
-    results: OCRResultModel;
+    result: any;
     isModal: boolean;
     handleModal: Function;
     showSlidingOptions: boolean;
 }
 
 const OCRResult: React.FC<OCRResultProps> = ({
-    results,
+    result,
     isModal,
     handleModal,
     showSlidingOptions,
@@ -66,18 +61,18 @@ const OCRResult: React.FC<OCRResultProps> = ({
                 <DynamicLabel
                     label={'Meta-Info'}
                     initialValue={false}
-                    showFilter={false}
+                    resultFilter={false}
                     showIllustrator={false}>
-                    <OCRMetaInfo metaInfo={results.metaInfo} />
+                    <OCRMetaInfo metaInfo={result.metaInfo} />
                 </DynamicLabel>
                 <DynamicLabel
                     label={'Recognized-Text'}
                     initialValue={true}
-                    showFilter={true}
+                    resultFilter={true}
                     showIllustrator={true}>
-                    <IonList className={styles.results_container}>
+                    <IonList className={styles.result_container}>
                         <SlidingItem
-                            results={results}
+                            result={result}
                             showSlidingOptions={showSlidingOptions}
                         />
                     </IonList>

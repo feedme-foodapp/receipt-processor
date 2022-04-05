@@ -23,7 +23,12 @@ const initialState: ResultState = {
             lines: 0,
             words: 0
         },
-        lines: []
+        lines: [],
+        words: [],
+        filter: {
+            lines: true,
+            words: false
+        }
     }
 };
 
@@ -33,10 +38,6 @@ export const OCRResultsSlice = createSlice({
     reducers: {
         addResult: (state, action) => {
             state.ocrResults = action.payload;
-            
-        },
-        deleteResultById: (state, action) => {
-            state.ocrResults.lines = state.ocrResults.lines.filter((ocrResult: ResultModel) => ocrResult.id !== action.payload);
         },
         updateResult: (state, action) => {
             state.ocrResults.lines.map((ocrResult: ResultModel, index: number) => {
@@ -47,8 +48,14 @@ export const OCRResultsSlice = createSlice({
                 }
             })
         },
+        deleteLineById: (state, action) => {
+            state.ocrResults.lines = state.ocrResults.words.filter((ocrResult: ResultModel) => ocrResult.id !== action.payload);
+        },
         clearResults: (state) => {
-            state.ocrResults = initialState.ocrResults
+            state.ocrResults = initialState.ocrResults;
+        },
+        setFilter: (state, action) => {
+            state.ocrResults.filter = action.payload;
         }
     }
 });
@@ -57,8 +64,9 @@ export const OCRResultsSlice = createSlice({
 export const {
     addResult,
     updateResult,
-    deleteResultById,
-    clearResults
+    deleteLineById,
+    clearResults,
+    setFilter
 } = OCRResultsSlice.actions;
 
 /* Reducer */

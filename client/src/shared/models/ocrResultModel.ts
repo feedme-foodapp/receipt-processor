@@ -3,6 +3,8 @@
 export interface OCRResultModel {
     metaInfo: MetaInfoModel;
     lines: ResultModel[];
+    words: ResultModel[];
+    filter: FilterModel;
 }
 
 export interface MetaInfoModel {
@@ -25,6 +27,10 @@ export interface ResultModel {
     bbox: BBoxModel;
 }
 
+export interface FilterModel {
+    lines: boolean;
+    words: boolean;
+}
 
 export const DEFAULT_RESULT: OCRResultModel = {
     metaInfo: {
@@ -32,5 +38,10 @@ export const DEFAULT_RESULT: OCRResultModel = {
         words: 0,
         confidence: 0
     },
-    lines: []
+    lines: [],
+    words: [],
+    filter: {
+        lines: true,
+        words: false
+    }
 };

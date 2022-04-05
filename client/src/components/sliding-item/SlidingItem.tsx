@@ -27,7 +27,7 @@ import styles from './SlidingItem.module.scss';
 
 /* Interface(s) */
 interface SlidingItemProps {
-    results: OCRResultModel;
+    result: OCRResultModel;
     showSlidingOptions: boolean;
 }
 
@@ -36,7 +36,7 @@ interface SlidingEditInputModel {
     show: boolean;
 }
 
-const SlidingItem: React.FC<SlidingItemProps> = ({ results, showSlidingOptions }) => {
+const SlidingItem: React.FC<SlidingItemProps> = ({ result, showSlidingOptions }) => {
     const slidingItemRef: any = useRef();
 
     // slidingEditInput
@@ -78,13 +78,13 @@ const SlidingItem: React.FC<SlidingItemProps> = ({ results, showSlidingOptions }
         setEditResult(result);
     };
 
-    const renderResults = results.lines.map((result: ResultModel) => {
+    const renderResults = result.lines.map((result: ResultModel) => {
         return (
             <IonItemSliding
                 key={result.id}
                 ref={slidingItemRef}
                 style={{
-                    borderRadius:  '8px'
+                    borderRadius: '8px'
                 }}
                 disabled={!showSlidingOptions}>
                 <IonItem
@@ -94,10 +94,10 @@ const SlidingItem: React.FC<SlidingItemProps> = ({ results, showSlidingOptions }
                     className={styles.line_item}
                     lines="none">
                     <div className={styles.line}>
-                        <div className={styles.text}>
+                        <div className={`${styles.text} primary-text`}>
                             {result.text}
                         </div>
-                        <div className={styles.confidence}>
+                        <div className={`${styles.confidence} primary-text`}>
                             {result.confidence} %
                         </div>
                     </div>

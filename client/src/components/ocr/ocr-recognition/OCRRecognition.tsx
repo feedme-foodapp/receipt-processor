@@ -25,6 +25,11 @@ import {
     ServiceLoader
 } from 'src/shared/services/service-loader';
 
+/* Util(s) */
+import {
+    createResultObject
+} from 'src/utils/helper/ocrResult';
+
 /* Stylesheet */
 import styles from './OCRRecognition.module.scss';
 
@@ -37,31 +42,8 @@ interface OCRRecognitionProps {
 const OCRRecognition: React.FC<OCRRecognitionProps> = ({ receipt, handleIsProcessing }) => {
     const dispatch = useDispatch();
 
-    const addToResultsState = (results: any) => {
-        const tmpOcrResults = {
-            metaInfo: {
-                confidence: results.confidence,
-                lines: results.lines.length,
-                words: results.words.length
-            },
-            //@ts-ignore
-            lines: []
-        };
-
-        // eslint-disable-next-line array-callback-return
-        results.lines.map((line: any, index: number) => {
-            tmpOcrResults.lines.push({
-                //@ts-ignore
-                id: index,
-                //@ts-ignore
-                text: line.text,
-                //@ts-ignore
-                confidence: line.confidence,
-                //@ts-ignore
-                bbox: line.bbox
-            })
-        });
-        dispatch(addResult(tmpOcrResults));
+    const addToResultsState = (result: any) => {
+        dispatch(addResult(createResultObject(result, )));
     };
 
     return (
@@ -76,9 +58,8 @@ const OCRRecognition: React.FC<OCRRecognitionProps> = ({ receipt, handleIsProces
                 onClick={
                     () => {
                         handleIsProcessing(true);
-                        ServiceLoader.tesseract().recognize(receipt).then((results: any) => {
-                            addToResultsState(results);
-                            console.log(results);
+                        ServiceLoader.tesseract().recognize(receipt).then((result: any) => {
+                            addToResultsState(result);
                             handleIsProcessing(false);
                         });
                     }

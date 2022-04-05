@@ -7,7 +7,7 @@ import {
 } from 'react-redux';
 
 import {
-    deleteResultById
+    deleteLineById
 } from 'src/redux/features/ocrResultSlice';
 
 /* Ionic */
@@ -41,7 +41,7 @@ const DeleteItemOption: React.FC<DeleteItemOptionProps> = ({ result }) => {
             className={styles.delete_option}
             onClick={
                 () => {
-                    dispatch(deleteResultById(result.id));
+                    dispatch(deleteLineById(result.id));
                 }
             }>
             <IonIcon

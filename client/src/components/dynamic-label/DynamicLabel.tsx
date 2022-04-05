@@ -10,11 +10,13 @@ import {
 import {
     chevronUp,
     chevronDown,
-    documentOutline
+    documentOutline,
+    filterOutline
 } from 'ionicons/icons';
 
 /* Component(s) */
 import Illustrator from 'src/components/shared/illustrator/Illustrator';
+import OCRResultFilter from 'src/components/ocr/ocr-result-filter/OCRResultFilter';
 
 /* Stylesheet */
 import styles from './DynamicLabel.module.scss';
@@ -24,7 +26,7 @@ interface OCRDynamicLabelProps {
     label: string;
     initialValue: boolean;
     children: React.ReactNode;
-    showFilter: boolean;
+    resultFilter: boolean;
     showIllustrator: boolean;
 }
 
@@ -32,12 +34,19 @@ const OCRDynamicLabel: React.FC<OCRDynamicLabelProps> = ({
     label,
     initialValue,
     children,
-    showFilter,
+    resultFilter,
     showIllustrator
 }) => {
 
     // showDynamicContent
     const [showDynamicContent, setShowDynamicContent] = useState<boolean>(initialValue);
+
+    // showResultSelector
+    const [showResultFilter, setShowResultFilter] = useState<boolean>(false);
+
+    const handleResultFilter = (value: boolean) => {
+        setShowResultFilter(value);
+    };
 
     return (
         <div className={styles.dynamic_label_container}>
@@ -45,15 +54,26 @@ const OCRDynamicLabel: React.FC<OCRDynamicLabelProps> = ({
                 <h4 className={styles.label}>
                     {label}
                 </h4>
-                {showFilter && (
-                    <IonFabButton
-                        className={`${styles.fab_btn} ${styles.filter_fab_btn}`}
-                        size="small">
-                        <IonIcon
-                            className={`${styles.icon} ${styles.settings_icon}`}
-                            icon={'/assets/icon/filter.svg'}
+                {resultFilter && (
+                    <React.Fragment>
+                        <IonFabButton
+                            className={`${styles.fab_btn} ${styles.filter_fab_btn}`}
+                            size="small"
+                            onClick={
+                                () => {
+                                    setShowResultFilter(!showResultFilter);
+                                }
+                            }>
+                            <IonIcon
+                                className={`${styles.icon} ${styles.settings_icon}`}
+                                icon={filterOutline}
+                            />
+                        </IonFabButton>
+                        <OCRResultFilter 
+                            showResultFilter={showResultFilter}
+                            handleResultFilter={handleResultFilter}
                         />
-                    </IonFabButton>
+                    </React.Fragment>
                 )}
                 <IonFabButton
                     className={`${styles.fab_btn} ${styles.chevron_fab_btn}`}
@@ -61,8 +81,6 @@ const OCRDynamicLabel: React.FC<OCRDynamicLabelProps> = ({
                     onClick={
                         () => {
                             setShowDynamicContent(!showDynamicContent);
-                            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                            // handleIllustrator ? handleIllustrator(showDynamicContent ? true : false) : undefined;
                         }
                     }>
                     <IonIcon
